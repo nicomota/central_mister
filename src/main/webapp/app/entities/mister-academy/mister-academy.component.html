@@ -1,8 +1,18 @@
 <jhi-sidebar></jhi-sidebar>
 
 <div class="academy-hero">
-    <h1>Mister Academy</h1>
-    <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
+  <div class="user-info">
+    <div class="user-welcome">
+      <i class='bx bx-user-circle'></i>
+      <span>Olá, <strong>{{ username }}</strong></span>
+    </div>
+    <button class="logout-btn" (click)="logout()">
+      <i class='bx bx-log-out'></i>
+      Sair
+    </button>
+  </div>
+  <h1>Mister Academy</h1>
+  <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
 </div>
 
 <div class="content">
@@ -21,7 +31,7 @@
           </div>
         </div>
         <div class="journey-action">
-          <a href="/mister_academy/journey/journey.html" class="journey-btn" id="journeyBtn">
+          <a routerLink="/mister-academy/journey" class="journey-btn" id="journeyBtn">
             <i class='bx bx-play-circle' id="journeyIcon"></i>
             <span id="journeyText">Iniciar Jornada</span>
           </a>

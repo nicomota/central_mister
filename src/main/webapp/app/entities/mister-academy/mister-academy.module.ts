@@ -3,15 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { MisterAcademyComponent } from './mister-academy.component';
 import { JourneyComponent } from './journey/journey.component';
+import { AuthGuard } from 'app/core/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: MisterAcademyComponent
+    component: MisterAcademyComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'journey',
-    component: JourneyComponent
+    component: JourneyComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
