@@ -1,0 +1,48 @@
+<jhi-sidebar></jhi-sidebar>
+
+<div class="course-page" *ngIf="course">
+  <div class="course-header">
+    <button class="back-btn" (click)="goBack()">
+      <i class='bx bx-arrow-back'></i>
+      Voltar
+    </button>
+    <div class="course-info">
+      <h1>{{ course.title }}</h1>
+      <div class="course-meta">
+        <span class="duration"><i class='bx bx-time'></i> {{ course.duration }}</span>
+        <span class="level">{{ course.level }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <div class="video-section">
+      <div class="video-container">
+        <iframe
+          [src]="safeVideoUrl"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="description-section">
+      <h2>Sobre este curso</h2>
+      <p>{{ course.description }}</p>
+    </div>
+
+    <div class="actions-section">
+      <button class="primary-btn">
+        <i class='bx bx-check-circle'></i>
+        Marcar como Concluído
+      </button>
+      <button class="secondary-btn" (click)="goBack()">
+        <i class='bx bx-list-ul'></i>
+        Ver Todos os Cursos
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">© 2025 Nícolas da Mota Monteiro dos Santos</div>

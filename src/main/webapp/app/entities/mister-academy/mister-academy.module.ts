@@ -4,6 +4,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { MisterAcademyComponent } from './mister-academy.component';
 import { JourneyComponent } from './journey/journey.component';
 import { AuthGuard } from 'app/core/auth/auth.guard';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
   {
@@ -15,11 +16,16 @@ const routes: Routes = [
     path: 'journey',
     component: JourneyComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'curso/:id',
+    component: CourseComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild(routes)],
-  declarations: [MisterAcademyComponent, JourneyComponent]
+  declarations: [MisterAcademyComponent, JourneyComponent, CourseComponent]
 })
 export class MisterAcademyModule {}
