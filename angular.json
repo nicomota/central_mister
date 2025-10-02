@@ -1,0 +1,175 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "30ea5334-cfed-4243-a3a7-ed7637392de9"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "central-de-ajuda": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/central-de-ajuda",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/assets",
+              "src/versao.json",
+              {
+                "glob": "**/*",
+                "input": "aprenda_utilizar",
+                "output": "/aprenda_utilizar"
+              },
+              {
+                "glob": "**/*",
+                "input": "duvidas_frequentes",
+                "output": "/duvidas_frequentes"
+              },
+              {
+                "glob": "**/*",
+                "input": "mister_academy",
+                "output": "/mister_academy"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/entities/plano-de-contas",
+                "output": "/plano-de-contas"
+              },
+              {
+                "glob": "**/*",
+                "input": "cadastros",
+                "output": "/cadastros"
+              },
+              {
+                "glob": "**/*",
+                "input": "integracoes_bancarias",
+                "output": "/integracoes_bancarias"
+              },
+              {
+                "glob": "**/*",
+                "input": "notas_fiscais",
+                "output": "/notas_fiscais"
+              },
+              {
+                "glob": "**/*",
+                "input": "comprovantes",
+                "output": "/comprovantes"
+              },
+              {
+                "glob": "**/*",
+                "input": "extratos",
+                "output": "/extratos"
+              },
+              {
+                "glob": "**/*",
+                "input": "planilhas",
+                "output": "/planilhas"
+              },
+              {
+                "glob": "**/*",
+                "input": "concilia",
+                "output": "/concilia"
+              },
+              {
+                "glob": "**/*",
+                "input": "regras",
+                "output": "/regras"
+              },
+              {
+                "glob": "**/*",
+                "input": "registro",
+                "output": "/registro"
+              },
+              {
+                "glob": "**/*",
+                "input": "ticket",
+                "output": "/ticket"
+              },
+              {
+                "glob": "**/*",
+                "input": "exportacao",
+                "output": "/exportacao"
+              },
+              {
+                "glob": "**/*",
+                "input": "edicao_avancada",
+                "output": "/edicao_avancada"
+              }
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/boxicons/css/boxicons.min.css",
+              "src/assets/global-styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "central-de-ajuda:build:production"
+            },
+            "development": {
+              "browserTarget": "central-de-ajuda:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+<jhi-sidebar></jhi-sidebar>
+
+<div class="hero">
+        <h1>Transferências entre contas bancárias de mesma titularidade</h1>
+        <p class="text-primary">Configuração de lançamentos de transferências bancárias</p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="section">
+            <h4>Resumo</h4>
+            <p>Após o upload dos extratos bancários, é possível configurar os lançamentos de transferências entre contas bancárias de mesma titularidade, para que o Mister Contador considere apenas uma das transferências no arquivo de lançamentos contábeis, evitando duplicar esse tipo de lançamento em seu sistema contábil.</p>
+        </div>
+
+        <div class="section">
+            <h4>Introdução</h4>
+            <p>O Mister Contador irá realizar o lançamento contábil de forma precisa nas contas contábeis dos bancos envolvidos na transferência. As transferências entre contas bancárias de mesma titularidade podem ser automatizadas através da criação de regras, quando possível, ou então, associando a conta contábil dos bancos.</p>
+        </div>
+
+        <div class="section">
+            <h4>Visão Geral do Recurso/Funcionalidade</h4>
+            <p>Cadastre TODOS os bancos da empresa no Mister Contador. Após o cadastro, faça o upload dos insumos (notas, comprovantes e extratos) do mês que está contabilizando, em TODAS as contas bancárias cadastradas.</p>
+        </div>
+
+        <div class="section">
+            <h4>COMO FUNCIONA? <a href="https://drive.google.com/file/d/1qTON1q3zOawg-vDrmOVQ3976xcfnzHHC/view?usp=drive_link" target="_blank">(Clique aqui para baixar o arquivo em PDF)</a></h4>
+            
+            <li>Cadastre as agências bancárias, cada uma com uma conta contábil diferente e faça o upload dos insumos (notas, comprovantes e extratos), do mês que deseja fazer a contabilização.</li>
+            
+            <li>Podem ser de bancos diferentes. Neste caso, usaremos duas contas do BB:</li>
+            
+            <div class="img-block">
+                <img src="/assets/img/registro/transferencia_contas/transferencia.png" class="img-fluid rounded">
+            </div>
+            
+            <div class="img-block">
+                <img src="/assets/img/registro/transferencia_contas/transferencia.png2" class="img-fluid rounded">
+            </div>
+            <p><strong>OBS:</strong> Se a empresa possuir apenas duas contas bancárias, é possível configurar uma regra para automatizar as transferências. Se forem mais de duas contas bancárias, a regra só é possível, se no histórico do extrato, for possível identificar a conta bancária de origem ou destino da transferência. Caso contrário, a recomendação é "associar a conta" contábil, lançando um banco contra o outro.</p>
+        </div>
+
+        <div class="section">
+            <h4>CRIANDO AS REGRAS</h4>
+            
+            <div class="section">
+                <h5>REGRA NA CONTA BANCÁRIA DE ORIGEM:</h5>
+                <li>A regra pode ser configurada quando a empresa tem apenas duas contas bancárias. Selecione o banco de origem da transferência, que gera o comprovante de transferência com o nome do destinatário (o mesmo do titular da conta), selecione "Cliente/Fornecedor" e selecione a conta contábil do banco de destino do lançamento. Se não tiver o comprovante de transferência, é possível selecionar o "histórico" do extrato, se tiver o nome da empresa, ou a conta bancária de destino do lançamento:</li>
+                
+                <li><strong>Pelo cliente/fornecedor (comprovante), quando tem o comprovante da transferência:</strong></li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia3.png" class="img-fluid rounded">
+                    </div>
+                <li><strong>Pelo histórico do extrato,</strong> excluindo as informações que não necessárias e deixando apenas o nome da empresa, para que sempre que identificar o nome, lançar na conta contábil do BB da outra agência bancária, que é o destino da transferência:</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia4.png" class="img-fluid rounded">
+                    </div>
+            </div>
+
+            <div class="section">
+                <h5>REGRA NA CONTA BANCÁRIA DE DESTINO:</h5>
+                <li>A regra só pode ser configurada, se a empresa tem apenas duas contas bancárias, ou se no histórico do extrato bancário mostrar o nome da empresa ou a conta bancária que fez a transferência (conta bancária de ORIGEM):</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia5.png" class="img-fluid rounded">
+                    </div>           
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>ASSOCIAR CONTA CONTÁBIL</h4>
+            <li>Quando a empresa tem mais de duas contas bancárias e faz transferências aleatoriamente para todas, não é possível configurar a regra para automatizar. Pois na regra, a conta contábil configurada é fixa, sempre será a mesma conta contábil do banco.</li>
+            
+            <li>Para associar a conta contábil e contabilizar as transferências entre contas bancárias, é necessário saber o valor da transferência, para localizar as contas bancárias de origem e destino e lançar UM BANCO CONTRA O OUTRO:</li>
+            
+            <div class="section">
+                <h5>Exemplo:</h5>
+                <li>Para associar manualmente as contas contábeis dos bancos, o usuário seleciona a conta bancária de ORIGEM, em que identificou o valor de transferência e digita o valor da transferência no campo "Pesquisa".</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia6.png" class="img-fluid rounded">
+                    </div>     
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia7.png" class="img-fluid rounded">
+                    </div>     
+                <li>Clique em "Associar conta" e associe a conta contábil do banco de destino. Insira o histórico contábil que desejar e clique em "Salvar".</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia8.png" class="img-fluid rounded">
+                    </div>     
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia9.png" class="img-fluid rounded">
+                    </div>     
+                <li>Depois, para identificar a conta bancária de DESTINO, vá selecionando a conta bancária, até encontrar o valor na conta bancária correspondente de DESTINO, que recebeu a transferência.</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia10.png" class="img-fluid rounded">
+                    </div>     
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia11.png" class="img-fluid rounded">
+                    </div>     
+                <li>Associe a conta contábil do banco de origem da transferência, clicando em "Associar conta"</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia12.png" class="img-fluid rounded">
+                    </div>     
+                                        <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia13.png" class="img-fluid rounded">
+                    </div>     
+                <li>Observe que as contas contábeis do exemplo, são as contas contábeis do Banco do Brasil. Ou seja, o lançamento deve ficar um banco contra o outro. E o histórico contábil, a linha branca, é o histórico que irá no arquivo de lançamentos contábeis.</li>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>EXPORTAÇÃO INTELIGENTE DOS LANÇAMENTOS CONTÁBEIS</h4>
+            <li>Após finalizar a contabilização TOTAL do extrato, ao gerar o arquivo de exportação de lançamentos contábeis da primeira conta bancária, irá aparecer no lançamento de transferência de valores entre contas de mesma titularidade, a informação de que a "Transferência processada em outra agência" e o lançamento contábil não constará no arquivo de lançamentos contábeis que foi gerado. Pois, essa transferência será contabilizada através do arquivo de lançamentos contábeis da outra conta bancária</li>
+                    <div class="img-block">
+                        <img src="/assets/img/registro/transferencia_contas/transferencia14.png" class="img-fluid rounded">
+                    </div>     
+            <p><strong>OBS:</strong> No arquivo de lançamentos contábeis da segunda conta bancária, o lançamento de transferência de valores entre contas de mesma titularidade irá ser contabilizado normalmente, informando as contas contábeis dos bancos envolvidos na transferência</p>
+        </div>
+
+        <div class="footer">© 2025 Nícolas da Mota Monteiro dos Santos.</div>
+    </div>

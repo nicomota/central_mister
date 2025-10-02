@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\registro\\transferencias_bancarias\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\registro\\associacao_conta_contabil\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\regras\\criacao_regras\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\concilia\\modulo_basico\")",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(python:*)",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\concilia\\modulo_premium\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\concilia\\recebimento_rede\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\concilia\\recebimento_cielo\")",
+      "Bash(dir \"C:\\NicoProjetos\\central_de_ajuda\\concilia\\recebimento_stone\")",
+      "Bash(dir:*)",
+      "Bash(move:*)",
+      "Read(//c/NicoProjetos/**)",
+      "Bash(xcopy:*)",
+      "Bash(cat:*)",
+      "Bash(curl -X POST http://localhost:7980/api/authenticate -H \"Content-Type: application/json\" -d \"{\"\"username\"\":\"\"test\"\",\"\"password\"\":\"\"test\"\",\"\"rememberMe\"\":false}\" -v)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(ng generate module:*)",
+      "Bash(ng generate component:*)",
+      "Bash(node:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $dir ===\")",
+      "Bash(ls:*)",
+      "Bash(done)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(do sed -i 's|<link href=\"\"../../assets/global-styles.css\"\" rel=\"\"stylesheet\"\">|<link href=\"\"/assets/global-styles.css\"\" rel=\"\"stylesheet\"\">|g' \"$file\")",
+      "Bash(do sed -i 's|/plano_de_contas/|/plano-de-contas/|g' \"$file\")",
+      "Bash(do sed -i 's|href=\"\"/plano-de-contas/plano_de_contas.html\"\"|href=\"\"/plano-de-contas\"\"|g' \"$file\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

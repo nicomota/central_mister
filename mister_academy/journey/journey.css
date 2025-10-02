@@ -1,0 +1,524 @@
+.journey-hero {
+  background-image: linear-gradient(to left top, #00015c, #0024ac, #0035da, #003aea, #0035da, #0024ac, #00015c);
+  color: white;
+  padding: 2rem 2rem;
+  margin-left: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  opacity: 0.8;
+}
+
+.journey-hero h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.journey-hero p {
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.overall-progress {
+  background: #2a2a2a;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #404040;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* margin-bottom: 1.5rem; */
+}
+
+.progress-header h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.progress-stats {
+  text-align: right;
+}
+
+.progress-percentage {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b82f6;
+  line-height: 1;
+}
+
+.progress-courses {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.progress-bar-container {
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #404040;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-info {
+  color: #d1d5db;
+  margin: 0;
+}
+
+.progress-info strong {
+  color: #ffffff;
+}
+
+.video-section {
+  margin-bottom: 3rem;
+}
+
+.video-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  background: #2a2a2a;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #404040;
+}
+
+.video-player {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.video-player iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem 1.5rem 1rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-player:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.journey-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.journey-tracker h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+.video-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.video-steps::-webkit-scrollbar {
+  width: 4px;
+}
+
+.video-steps::-webkit-scrollbar-track {
+  background: #404040;
+  border-radius: 2px;
+}
+
+.video-steps::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-item:hover {
+  background: #333333;
+}
+
+.step-item.current {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.step-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #6b7280;
+  background: transparent;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.step-item.completed .step-dot {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.step-item.completed .step-dot::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.step-item.current .step-dot {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  animation: currentPulse 2s infinite;
+}
+
+.step-item.current .step-dot::after {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8px;
+  color: white;
+}
+
+.step-item.locked .step-dot {
+  background: #404040;
+  border-color: #6b7280;
+}
+
+.step-label {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+.step-item.completed .step-label {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.step-item.current .step-label {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.step-item.locked .step-label {
+  color: #6b7280;
+}
+
+@keyframes currentPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+.navigation-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  flex: 1;
+  background: #404040;
+  border: 1px solid #6b7280;
+  color: #d1d5db;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-btn.prev {
+  flex-direction: row;
+}
+
+.nav-btn.next {
+  flex-direction: row-reverse;
+}
+
+
+.certification-section {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.certification-card {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.3);
+}
+
+.cert-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.cert-content {
+  flex-grow: 1;
+}
+
+.cert-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cert-content p {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cert-requirements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.requirement.completed i {
+  color: #10b981;
+}
+
+.requirement.in-progress i {
+  color: #f59e0b;
+}
+
+.requirement.locked i {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.requirement.locked span {
+  opacity: 0.7;
+}
+
+.cert-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+
+.cert-btn:not(:disabled) {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.cert-btn:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .journey-hero {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .journey-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .progress-stats {
+    text-align: left;
+  }
+
+  .overall-progress,
+  .video-section,
+  .certification-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .video-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .video-steps {
+    max-height: 250px;
+  }
+
+  .step-item {
+    padding: 0.5rem;
+  }
+
+  .step-label {
+    font-size: 0.8rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .certification-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cert-requirements {
+    grid-template-columns: 1fr;
+  }
+}

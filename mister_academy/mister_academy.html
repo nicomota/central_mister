@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mister Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/global-styles.css" rel="stylesheet">
+  <link href="/mister_academy/mister_academy.css" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <h5>Central de Ajuda</h5>
+    <input type="text" class="form-control" placeholder="Pesquisar...">
+
+    <div class="atalhos-title">Atalhos</div>
+    <ul class="nav flex-column mb-3">
+        <li class="nav-item"><a class="nav-link" href="/index.html"><i class='bx bx-home'></i> Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="/aprenda_utilizar/aprenda.html"><i class='bx bx-book'></i> Aprenda a Utilizar</a></li>
+        <li class="nav-item"><a class="nav-link" href="/duvidas_frequentes/duvidas.html"><i class='bx bx-question-mark'></i> Dúvidas Frequentes</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/mister_academy/mister_academy.html"><i class='bx bx-video'></i> Mister Academy</a></li>
+    </ul>
+
+    <ul class="nav flex-column mt-3">
+      <li class="nav-item"><a class="nav-link" href="/plano_de_contas/plano_de_contas.html"><i class='bx bx-building-house'></i> Plano de Contas <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/cadastros/cadastros.html"><i class='bx bx-layer'></i> Cadastros <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/integracoes_bancarias/integracoes_bancarias.html"><i class='bx bx-link-alt'></i> Integrações Bancárias <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/notas_fiscais/notas_fiscais.html"><i class='bx bx-file'></i> Notas Fiscais <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/comprovantes/comprovantes.html"><i class='bx bx-receipt'></i> Comprovantes <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/extratos/extratos.html"><i class='bx bx-printer'></i> Extratos <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/planilhas/planilhas.html"><i class='bx bx-table'></i> Planilhas <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/concilia/concilia_cartao.html"><i class='bx bx-credit-card'></i> Concilia Cartão <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/regras/regras.html"><i class='bx bx-cog'></i> Regras <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/registro/registro.html"><i class='bx bx-notepad'></i> Registro Contábil <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/ticket/ticket.html"><i class='bx bx-message-square-edit'></i> Gerar Ticket <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/exportacao/exportacao.html"><i class='bx bx-download'></i> Exportação <i class='bx bx-chevron-right ms-auto'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="/edicao_avancada/edicao.html"><i class='bx bx-wrench'></i> Edição Avançada <i class='bx bx-chevron-right ms-auto'></i></a></li>
+    </ul>
+
+    <div class="sidebar-version text-center mt-auto p-3" style="font-size: 0.85rem; color: #999;">
+      <span id="versaoSistema"></span>
+    </div>
+  </div>
+
+  <div class="academy-hero">
+    <h1>Mister Academy</h1>
+    <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
+  </div>
+
+  <div class="content">
+    <!-- Card principal da jornada -->
+    <div class="journey-card">
+      <div class="journey-content">
+        <div class="journey-text">
+          <h2>Trilha de Certificação - A Jornada do Contador</h2>
+          <p>Descubra o caminho completo para dominar o Mister Contador. Nossa trilha de aprendizagem foi cuidadosamente desenvolvida para levar você do básico ao avançado, com projetos práticos e certificações reconhecidas.</p>
+          <p>Ao final dessa jornada, você iremos disponibilizar uma certificação de usabilidade do <strong>Mister Contador !🚀</strong></p>
+          <div class="journey-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+            <span class="progress-text">45% concluído • 5 de 12 cursos</span>
+          </div>
+        </div>
+        <div class="journey-action">
+          <a href="/mister_academy/journey/journey.html" class="journey-btn" id="journeyBtn">
+            <i class='bx bx-play-circle' id="journeyIcon"></i>
+            <span id="journeyText">Iniciar Jornada</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estatísticas do usuário -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Cursos Disponíveis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Cursos Concluídos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Em Progresso</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Certificados Obtidos</div>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters-section">
+      <div class="filter-group">
+        <span class="filter-label">Filtrar por:</span>
+        <select class="filter-select" id="levelFilter">
+          <option value="all">Todos os níveis</option>
+          <option value="iniciante">Iniciante</option>
+          <option value="intermediario">Intermediário</option>
+          <option value="avancado">Avançado</option>
+        </select>
+        <select class="filter-select" id="categoryFilter">
+          <option value="all">Todas as categorias</option>
+          <option value="basico">Módulo Básico</option>
+          <option value="configuracao">Configuração</option>
+          <option value="integracao">Integrações</option>
+          <option value="avancado">Recursos Avançados</option>
+        </select>
+        <select class="filter-select" id="statusFilter">
+          <option value="all">Todos os status</option>
+          <option value="not-started">Não iniciado</option>
+          <option value="in-progress">Em progresso</option>
+          <option value="completed">Concluído</option>
+        </select>
+        <a href="#" class="certificates-btn">
+          <i class='bx bx-award'></i>
+          Meus Certificados
+        </a>
+      </div>
+    </div>
+
+    <!-- Grid de Cursos -->
+    <div class="course-grid">
+      <!-- Curso 1 -->
+      <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <iframe src="https://www.youtube.com/embed/EB4eXJuKxtA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Entendendo o Registro Contábil</div>
+          <div class="course-description">O Mister Contador irá realizar o lançamento contábil de forma automática nas contas contábeis de fornecedores, quando identificar o cnpj do beneficiário/fornecedor, nos comprovantes de pagamento, na NF-e de entrada e na conta contábil do fornecedor, no plano de contas.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>7:00 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
+          </div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 2 -->
+      <div class="course-card" data-level="iniciante" data-category="configuracao" data-status="in-progress">
+        <div class="course-thumbnail">
+          <iframe src="https://www.youtube.com/embed/2_aaur_viK8?si=A7qiqF2p8ZdyX2_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Configuração de uma Nova Empresa</div>
+          <div class="course-description">Configure uma nova empresa inicial do sistema.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>2:32 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
+          </div>
+          <button class="course-btn in-progress">
+            <i class='bx bx-play'></i> Continuar Curso (60%)
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 3 -->
+      <div class="course-card" data-level="intermediario" data-category="integracao" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Integrações Bancárias</div>
+          <div class="course-description">Conecte suas contas bancárias e automatize a importação de extratos e movimentações.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>45 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
+          </div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 4 -->
+      <div class="course-card" data-level="intermediario" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Upload e Gestão de Notas Fiscais</div>
+          <div class="course-description">Aprenda a importar, organizar e processar notas fiscais de forma eficiente.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>30 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
+          </div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 5 -->
+      <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Concilia Cartão Premium</div>
+          <div class="course-description">Domine a conciliação avançada de cartões com IA e automatização completa.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>55 min</span>
+            </div>
+            <div class="course-level">Avançado</div>
+          </div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 6 -->
+      <div class="course-card" data-level="intermediario" data-category="configuracao" data-status="in-progress">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Criação e Gestão de Regras</div>
+          <div class="course-description">Automatize lançamentos contábeis com regras inteligentes e personalizadas.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>40 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
+          </div>
+          <button class="course-btn in-progress">
+            <i class='bx bx-play'></i> Continuar Curso (25%)
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 7 -->
+      <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Relatórios e Exportações Avançadas</div>
+          <div class="course-description">Gere relatórios personalizados e exporte dados para sistemas contábeis externos.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>50 min</span>
+            </div>
+            <div class="course-level">Avançado</div>
+          </div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
+        </div>
+      </div>
+
+      <!-- Curso 8 -->
+      <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Navegação e Interface do Sistema</div>
+          <div class="course-description">Conheça todos os menus, atalhos e funcionalidades da interface do Mister Contador.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>20 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
+          </div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 Nícolas da Mota Monteiro dos Santos</div>
+  </div>
+
+  <script>
+    // Script para filtros
+    function filterCourses() {
+      const levelFilter = document.getElementById('levelFilter').value;
+      const categoryFilter = document.getElementById('categoryFilter').value;
+      const statusFilter = document.getElementById('statusFilter').value;
+
+      const courses = document.querySelectorAll('.course-card');
+
+      courses.forEach(course => {
+        const level = course.dataset.level;
+        const category = course.dataset.category;
+        const status = course.dataset.status;
+
+        const levelMatch = levelFilter === 'all' || level === levelFilter;
+        const categoryMatch = categoryFilter === 'all' || category === categoryFilter;
+        const statusMatch = statusFilter === 'all' || status === statusFilter;
+
+        if (levelMatch && categoryMatch && statusMatch) {
+          course.style.display = 'block';
+        } else {
+          course.style.display = 'none';
+        }
+      });
+    }
+
+    // Adicionar event listeners aos filtros
+    document.getElementById('levelFilter').addEventListener('change', filterCourses);
+    document.getElementById('categoryFilter').addEventListener('change', filterCourses);
+    document.getElementById('statusFilter').addEventListener('change', filterCourses);
+
+    // Script para versão
+    fetch('/versao.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("versaoSistema").innerText = "Versão " + data.versao;
+      })
+      .catch(error => {
+        console.error("Erro ao carregar a versão:", error);
+        document.getElementById("versaoSistema").innerText = "Versão indisponível";
+      });
+
+    // Script para botão dinâmico da jornada
+    function updateJourneyButton() {
+      // Verificação do progresso do usuário
+      // TODO: Integrar com sistema real de progresso (API, localStorage, etc.)
+      const userProgress = getUserProgress(); // Função que retorna o progresso real
+
+      // Dados simulados para demonstração
+      function getUserProgress() {
+        return {
+          hasStarted: true, // Mude para false para testar "Iniciar Jornada"
+          completedCourses: 5,
+          totalCourses: 12,
+          progressPercentage: 45
+        };
+      }
+
+      const journeyBtn = document.getElementById('journeyBtn');
+      const journeyIcon = document.getElementById('journeyIcon');
+      const journeyText = document.getElementById('journeyText');
+
+      if (userProgress.hasStarted && userProgress.completedCourses > 0) {
+        // Usuário já começou a jornada
+        journeyIcon.className = 'bx bx-play';
+        journeyText.textContent = 'Continuar Jornada';
+        journeyBtn.setAttribute('title', `Continue de onde parou - ${userProgress.progressPercentage}% concluído`);
+      } else {
+        // Usuário ainda não começou
+        journeyIcon.className = 'bx bx-play-circle';
+        journeyText.textContent = 'Iniciar Jornada';
+        journeyBtn.setAttribute('title', 'Comece sua jornada de aprendizagem no Mister Contador');
+      }
+    }
+
+    // Executar quando a página carregar
+    document.addEventListener('DOMContentLoaded', updateJourneyButton);
+  </script>
+</body>
+</html>
