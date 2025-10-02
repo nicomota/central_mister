@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { DuvidasFrequentesComponent } from './duvidas-frequentes.component';
-import { DUVIDAS_FREQUENTES_ROUTE } from './duvidas-frequentes.route';
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: DuvidasFrequentesComponent
+  }
+];
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild([DUVIDAS_FREQUENTES_ROUTE])],
-  declarations: [DuvidasFrequentesComponent],
+  imports: [SharedModule, RouterModule.forChild(routes)],
+  declarations: [DuvidasFrequentesComponent]
 })
 export class DuvidasFrequentesModule {}

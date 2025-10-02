@@ -1,264 +1,254 @@
 <jhi-sidebar></jhi-sidebar>
 
 <div class="academy-hero">
-  <div class="user-info">
-    <div class="user-welcome">
-      <i class='bx bx-user-circle'></i>
-      <span>Olá, <strong>{{ username }}</strong></span>
-    </div>
-    <button class="logout-btn" (click)="logout()">
-      <i class='bx bx-log-out'></i>
-      Sair
-    </button>
-  </div>
-  <h1>Mister Academy</h1>
-  <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
+    <h1>Mister Academy</h1>
+    <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
 </div>
 
 <div class="content">
-  <!-- Card principal da jornada -->
-  <div class="journey-card">
-    <div class="journey-content">
-      <div class="journey-text">
-        <h2>Trilha de Certificação - A Jornada do Contador</h2>
-        <p>Descubra o caminho completo para dominar o Mister Contador. Nossa trilha de aprendizagem foi cuidadosamente desenvolvida para levar você do básico ao avançado, com projetos práticos e certificações reconhecidas.</p>
-        <p>Ao final dessa jornada, você iremos disponibilizar uma certificação de usabilidade do <strong>Mister Contador !🚀</strong></p>
-        <div class="journey-progress">
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 45%"></div>
+    <!-- Card principal da jornada -->
+    <div class="journey-card">
+      <div class="journey-content">
+        <div class="journey-text">
+          <h2>Trilha de Certificação - A Jornada do Contador</h2>
+          <p>Descubra o caminho completo para dominar o Mister Contador. Nossa trilha de aprendizagem foi cuidadosamente desenvolvida para levar você do básico ao avançado, com projetos práticos e certificações reconhecidas.</p>
+          <p>Ao final dessa jornada, você iremos disponibilizar uma certificação de usabilidade do <strong>Mister Contador !🚀</strong></p>
+          <div class="journey-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+            <span class="progress-text">45% concluído • 5 de 12 cursos</span>
           </div>
-          <span class="progress-text">45% concluído • 5 de 12 cursos</span>
+        </div>
+        <div class="journey-action">
+          <a href="/mister_academy/journey/journey.html" class="journey-btn" id="journeyBtn">
+            <i class='bx bx-play-circle' id="journeyIcon"></i>
+            <span id="journeyText">Iniciar Jornada</span>
+          </a>
         </div>
       </div>
-      <div class="journey-action">
-        <a href="/mister_academy/journey/journey.html" class="journey-btn" id="journeyBtn">
-          <i class='bx bx-play-circle' id="journeyIcon"></i>
-          <span id="journeyText">Iniciar Jornada</span>
+    </div>
+
+    <!-- Estatísticas do usuário -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Cursos Disponíveis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Cursos Concluídos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Em Progresso</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Certificados Obtidos</div>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters-section">
+      <div class="filter-group">
+        <span class="filter-label">Filtrar por:</span>
+        <select class="filter-select" id="levelFilter">
+          <option value="all">Todos os níveis</option>
+          <option value="iniciante">Iniciante</option>
+          <option value="intermediario">Intermediário</option>
+          <option value="avancado">Avançado</option>
+        </select>
+        <select class="filter-select" id="categoryFilter">
+          <option value="all">Todas as categorias</option>
+          <option value="basico">Módulo Básico</option>
+          <option value="configuracao">Configuração</option>
+          <option value="integracao">Integrações</option>
+          <option value="avancado">Recursos Avançados</option>
+        </select>
+        <select class="filter-select" id="statusFilter">
+          <option value="all">Todos os status</option>
+          <option value="not-started">Não iniciado</option>
+          <option value="in-progress">Em progresso</option>
+          <option value="completed">Concluído</option>
+        </select>
+        <a href="#" class="certificates-btn">
+          <i class='bx bx-award'></i>
+          Meus Certificados
         </a>
       </div>
     </div>
-  </div>
 
-  <!-- Estatísticas do usuário -->
-  <div class="stats-section">
-    <div class="stat-card">
-      <div class="stat-number">12</div>
-      <div class="stat-label">Cursos Disponíveis</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Cursos Concluídos</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">2</div>
-      <div class="stat-label">Em Progresso</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Certificados Obtidos</div>
-    </div>
-  </div>
-
-  <!-- Filtros -->
-  <div class="filters-section">
-    <div class="filter-group">
-      <span class="filter-label">Filtrar por:</span>
-      <select class="filter-select" id="levelFilter">
-        <option value="all">Todos os níveis</option>
-        <option value="iniciante">Iniciante</option>
-        <option value="intermediario">Intermediário</option>
-        <option value="avancado">Avançado</option>
-      </select>
-      <select class="filter-select" id="categoryFilter">
-        <option value="all">Todas as categorias</option>
-        <option value="basico">Módulo Básico</option>
-        <option value="configuracao">Configuração</option>
-        <option value="integracao">Integrações</option>
-        <option value="avancado">Recursos Avançados</option>
-      </select>
-      <select class="filter-select" id="statusFilter">
-        <option value="all">Todos os status</option>
-        <option value="not-started">Não iniciado</option>
-        <option value="in-progress">Em progresso</option>
-        <option value="completed">Concluído</option>
-      </select>
-      <a href="#" class="certificates-btn">
-        <i class='bx bx-award'></i>
-        Meus Certificados
-      </a>
-    </div>
-  </div>
-
-  <!-- Grid de Cursos -->
-  <div class="course-grid">
-    <!-- Curso 1 -->
-    <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
-      <div class="course-thumbnail">
-        <iframe src="https://www.youtube.com/embed/EB4eXJuKxtA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Entendendo o Registro Contábil</div>
-        <div class="course-description">O Mister Contador irá realizar o lançamento contábil de forma automática nas contas contábeis de fornecedores, quando identificar o cnpj do beneficiário/fornecedor, nos comprovantes de pagamento, na NF-e de entrada e na conta contábil do fornecedor, no plano de contas.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>7:00 min</span>
-          </div>
-          <div class="course-level">Iniciante</div>
+    <!-- Grid de Cursos -->
+    <div class="course-grid">
+      <!-- Curso 1 -->
+      <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <iframe src="https://www.youtube.com/embed/EB4eXJuKxtA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <button class="course-btn completed">
-          <i class='bx bx-check'></i> Concluído
-        </button>
-      </div>
-    </div>
-
-    <!-- Curso 2 -->
-    <div class="course-card" data-level="iniciante" data-category="configuracao" data-status="in-progress">
-      <div class="course-thumbnail">
-        <iframe src="https://www.youtube.com/embed/2_aaur_viK8?si=A7qiqF2p8ZdyX2_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Configuração de uma Nova Empresa</div>
-        <div class="course-description">Configure uma nova empresa inicial do sistema.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>2:32 min</span>
+        <div class="course-content">
+          <div class="course-title">Entendendo o Registro Contábil</div>
+          <div class="course-description">O Mister Contador irá realizar o lançamento contábil de forma automática nas contas contábeis de fornecedores, quando identificar o cnpj do beneficiário/fornecedor, nos comprovantes de pagamento, na NF-e de entrada e na conta contábil do fornecedor, no plano de contas.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>7:00 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
           </div>
-          <div class="course-level">Iniciante</div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
         </div>
-        <button class="course-btn in-progress">
-          <i class='bx bx-play'></i> Continuar Curso (60%)
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 3 -->
-    <div class="course-card" data-level="intermediario" data-category="integracao" data-status="not-started">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Integrações Bancárias</div>
-        <div class="course-description">Conecte suas contas bancárias e automatize a importação de extratos e movimentações.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>45 min</span>
+      <!-- Curso 2 -->
+      <div class="course-card" data-level="iniciante" data-category="configuracao" data-status="in-progress">
+        <div class="course-thumbnail">
+          <iframe src="https://www.youtube.com/embed/2_aaur_viK8?si=A7qiqF2p8ZdyX2_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Configuração de uma Nova Empresa</div>
+          <div class="course-description">Configure uma nova empresa inicial do sistema.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>2:32 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
           </div>
-          <div class="course-level">Intermediário</div>
+          <button class="course-btn in-progress">
+            <i class='bx bx-play'></i> Continuar Curso (60%)
+          </button>
         </div>
-        <button class="course-btn">
-          <i class='bx bx-play'></i> Iniciar Curso
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 4 -->
-    <div class="course-card" data-level="intermediario" data-category="basico" data-status="completed">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Upload e Gestão de Notas Fiscais</div>
-        <div class="course-description">Aprenda a importar, organizar e processar notas fiscais de forma eficiente.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>30 min</span>
+      <!-- Curso 3 -->
+      <div class="course-card" data-level="intermediario" data-category="integracao" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Integrações Bancárias</div>
+          <div class="course-description">Conecte suas contas bancárias e automatize a importação de extratos e movimentações.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>45 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
           </div>
-          <div class="course-level">Intermediário</div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
         </div>
-        <button class="course-btn completed">
-          <i class='bx bx-check'></i> Concluído
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 5 -->
-    <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Concilia Cartão Premium</div>
-        <div class="course-description">Domine a conciliação avançada de cartões com IA e automatização completa.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>55 min</span>
+      <!-- Curso 4 -->
+      <div class="course-card" data-level="intermediario" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Upload e Gestão de Notas Fiscais</div>
+          <div class="course-description">Aprenda a importar, organizar e processar notas fiscais de forma eficiente.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>30 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
           </div>
-          <div class="course-level">Avançado</div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
         </div>
-        <button class="course-btn">
-          <i class='bx bx-play'></i> Iniciar Curso
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 6 -->
-    <div class="course-card" data-level="intermediario" data-category="configuracao" data-status="in-progress">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Criação e Gestão de Regras</div>
-        <div class="course-description">Automatize lançamentos contábeis com regras inteligentes e personalizadas.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>40 min</span>
+      <!-- Curso 5 -->
+      <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Concilia Cartão Premium</div>
+          <div class="course-description">Domine a conciliação avançada de cartões com IA e automatização completa.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>55 min</span>
+            </div>
+            <div class="course-level">Avançado</div>
           </div>
-          <div class="course-level">Intermediário</div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
         </div>
-        <button class="course-btn in-progress">
-          <i class='bx bx-play'></i> Continuar Curso (25%)
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 7 -->
-    <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Relatórios e Exportações Avançadas</div>
-        <div class="course-description">Gere relatórios personalizados e exporte dados para sistemas contábeis externos.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>50 min</span>
+      <!-- Curso 6 -->
+      <div class="course-card" data-level="intermediario" data-category="configuracao" data-status="in-progress">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Criação e Gestão de Regras</div>
+          <div class="course-description">Automatize lançamentos contábeis com regras inteligentes e personalizadas.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>40 min</span>
+            </div>
+            <div class="course-level">Intermediário</div>
           </div>
-          <div class="course-level">Avançado</div>
+          <button class="course-btn in-progress">
+            <i class='bx bx-play'></i> Continuar Curso (25%)
+          </button>
         </div>
-        <button class="course-btn">
-          <i class='bx bx-play'></i> Iniciar Curso
-        </button>
       </div>
-    </div>
 
-    <!-- Curso 8 -->
-    <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
-      <div class="course-thumbnail">
-        <i class='bx bx-play-circle'></i>
-      </div>
-      <div class="course-content">
-        <div class="course-title">Navegação e Interface do Sistema</div>
-        <div class="course-description">Conheça todos os menus, atalhos e funcionalidades da interface do Mister Contador.</div>
-        <div class="course-meta">
-          <div class="course-duration">
-            <i class='bx bx-time'></i>
-            <span>20 min</span>
+      <!-- Curso 7 -->
+      <div class="course-card" data-level="avancado" data-category="avancado" data-status="not-started">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Relatórios e Exportações Avançadas</div>
+          <div class="course-description">Gere relatórios personalizados e exporte dados para sistemas contábeis externos.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>50 min</span>
+            </div>
+            <div class="course-level">Avançado</div>
           </div>
-          <div class="course-level">Iniciante</div>
+          <button class="course-btn">
+            <i class='bx bx-play'></i> Iniciar Curso
+          </button>
         </div>
-        <button class="course-btn completed">
-          <i class='bx bx-check'></i> Concluído
-        </button>
+      </div>
+
+      <!-- Curso 8 -->
+      <div class="course-card" data-level="iniciante" data-category="basico" data-status="completed">
+        <div class="course-thumbnail">
+          <i class='bx bx-play-circle'></i>
+        </div>
+        <div class="course-content">
+          <div class="course-title">Navegação e Interface do Sistema</div>
+          <div class="course-description">Conheça todos os menus, atalhos e funcionalidades da interface do Mister Contador.</div>
+          <div class="course-meta">
+            <div class="course-duration">
+              <i class='bx bx-time'></i>
+              <span>20 min</span>
+            </div>
+            <div class="course-level">Iniciante</div>
+          </div>
+          <button class="course-btn completed">
+            <i class='bx bx-check'></i> Concluído
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer">© 2025 Nícolas da Mota Monteiro dos Santos</div>
+    <div class="footer">© 2025 Nícolas da Mota Monteiro dos Santos</div>
 </div>

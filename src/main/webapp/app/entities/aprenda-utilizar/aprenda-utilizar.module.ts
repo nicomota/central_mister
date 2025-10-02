@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { AprendaUtilizarComponent } from './aprenda-utilizar.component';
-import { APRENDA_UTILIZAR_ROUTE } from './aprenda-utilizar.route';
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AprendaUtilizarComponent
+  }
+];
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild([APRENDA_UTILIZAR_ROUTE])],
-  declarations: [AprendaUtilizarComponent],
+  imports: [SharedModule, RouterModule.forChild(routes)],
+  declarations: [AprendaUtilizarComponent]
 })
 export class AprendaUtilizarModule {}
