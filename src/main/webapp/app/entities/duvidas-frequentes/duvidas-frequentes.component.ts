@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'jhi-duvidas-frequentes',
   templateUrl: './duvidas-frequentes.component.html',
   styleUrls: ['./duvidas-frequentes.component.scss']
 })
-export class DuvidasFrequentesComponent implements OnInit {
-  constructor() {}
+export class DuvidasFrequentesComponent {
+  activePanel: string | null = 'collapseOne'; // painel inicial aberto
 
-  ngOnInit(): void {}
+  togglePanel(panelId: string): void {
+    this.activePanel = this.activePanel === panelId ? null : panelId;
+  }
 }
