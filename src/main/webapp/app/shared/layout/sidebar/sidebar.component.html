@@ -1,100 +1,106 @@
-<div class="sidebar">
-  <h5>Central de Ajuda</h5>
-  <input type="text" class="form-control" placeholder="Pesquisar...">
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-header">
+    <h5 *ngIf="!isCollapsed">Central de Ajuda</h5>
+    <button class="hamburger-btn" (click)="toggleSidebar()">
+      <i class='bx bx-menu'></i>
+    </button>
+  </div>
+  <input *ngIf="!isCollapsed" type="text" class="form-control" placeholder="Pesquisar...">
 
-  <div class="atalhos-title">Atalhos</div>
+  <div class="atalhos-title" *ngIf="!isCollapsed">Atalhos</div>
   <ul class="nav flex-column mb-3">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/home" routerLinkActive="active">
-        <i class='bx bx-home'></i> Início
+      <a class="nav-link tooltip-item" routerLink="/home" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Início' : null">
+        <i class='bx bx-home'></i> <span *ngIf="!isCollapsed">Início</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/aprenda-utilizar" routerLinkActive="active">
-        <i class='bx bx-book'></i> Aprenda a Utilizar
+      <a class="nav-link tooltip-item" routerLink="/aprenda-utilizar" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Aprenda a Utilizar' : null">
+        <i class='bx bx-book'></i> <span *ngIf="!isCollapsed">Aprenda a Utilizar</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/duvidas-frequentes" routerLinkActive="active">
-        <i class='bx bx-question-mark'></i> Dúvidas Frequentes
+      <a class="nav-link tooltip-item" routerLink="/duvidas-frequentes" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Dúvidas Frequentes' : null">
+        <i class='bx bx-question-mark'></i> <span *ngIf="!isCollapsed">Dúvidas Frequentes</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/mister-academy" routerLinkActive="active">
-        <i class='bx bx-video'></i> Mister Academy
+      <a class="nav-link tooltip-item" routerLink="/mister-academy" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Mister Academy' : null">
+        <i class='bx bx-video'></i> <span *ngIf="!isCollapsed">Mister Academy</span>
       </a>
     </li>
   </ul>
 
   <ul class="nav flex-column mt-3">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/plano-de-contas" routerLinkActive="active">
-        <i class='bx bx-building-house'></i> Plano de Contas <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/plano-de-contas" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Plano de Contas' : null">
+        <i class='bx bx-building-house'></i> <span *ngIf="!isCollapsed">Plano de Contas</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/cadastros" routerLinkActive="active">
-        <i class='bx bx-layer'></i> Cadastros <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/cadastros" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Cadastros' : null">
+        <i class='bx bx-layer'></i> <span *ngIf="!isCollapsed">Cadastros</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/integracoes-bancarias" routerLinkActive="active">
-        <i class='bx bx-link-alt'></i> Integrações Bancárias <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/integracoes-bancarias" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Integrações Bancárias' : null">
+        <i class='bx bx-link-alt'></i> <span *ngIf="!isCollapsed">Integrações Bancárias</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/notas-fiscais" routerLinkActive="active">
-        <i class='bx bx-file'></i> Notas Fiscais <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/notas-fiscais" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Notas Fiscais' : null">
+        <i class='bx bx-file'></i> <span *ngIf="!isCollapsed">Notas Fiscais</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/comprovantes" routerLinkActive="active">
-        <i class='bx bx-receipt'></i> Comprovantes <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/comprovantes" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Comprovantes' : null">
+        <i class='bx bx-receipt'></i> <span *ngIf="!isCollapsed">Comprovantes</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/extratos" routerLinkActive="active">
-        <i class='bx bx-printer'></i> Extratos <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/extratos" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Extratos' : null">
+        <i class='bx bx-printer'></i> <span *ngIf="!isCollapsed">Extratos</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/planilhas" routerLinkActive="active">
-        <i class='bx bx-table'></i> Planilhas <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/planilhas" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Planilhas' : null">
+        <i class='bx bx-table'></i> <span *ngIf="!isCollapsed">Planilhas</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/concilia" routerLinkActive="active">
-        <i class='bx bx-credit-card'></i> Concilia Cartão <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/concilia" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Concilia Cartão' : null">
+        <i class='bx bx-credit-card'></i> <span *ngIf="!isCollapsed">Concilia Cartão</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/regras" routerLinkActive="active">
-        <i class='bx bx-cog'></i> Regras <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/regras" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Regras' : null">
+        <i class='bx bx-cog'></i> <span *ngIf="!isCollapsed">Regras</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/registro" routerLinkActive="active">
-        <i class='bx bx-notepad'></i> Registro Contábil <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/registro" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Registro Contábil' : null">
+        <i class='bx bx-notepad'></i> <span *ngIf="!isCollapsed">Registro Contábil</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/ticket" routerLinkActive="active">
-        <i class='bx bx-message-square-edit'></i> Ticket <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/ticket" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Ticket' : null">
+        <i class='bx bx-message-square-edit'></i> <span *ngIf="!isCollapsed">Ticket</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/exportacao" routerLinkActive="active">
-        <i class='bx bx-download'></i> Exportação <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/exportacao" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Exportação' : null">
+        <i class='bx bx-download'></i> <span *ngIf="!isCollapsed">Exportação</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/edicao-avancada" routerLinkActive="active">
-        <i class='bx bx-wrench'></i> Edição Avançada <i class='bx bx-chevron-right ms-auto'></i>
+      <a class="nav-link tooltip-item" routerLink="/edicao-avancada" routerLinkActive="active" [attr.data-tooltip]="isCollapsed ? 'Edição Avançada' : null">
+        <i class='bx bx-wrench'></i> <span *ngIf="!isCollapsed">Edição Avançada</span> <i class='bx bx-chevron-right ms-auto' *ngIf="!isCollapsed"></i>
       </a>
     </li>
   </ul>
 
   <div class="sidebar-version text-center mt-auto p-3" style="font-size: 0.85rem; color: #999;">
-    <span>Versão 1.0.0</span>
+    <span *ngIf="!isCollapsed">Versão 1.0.0</span>
+    <span *ngIf="isCollapsed">v1.0</span>
   </div>
 </div>
