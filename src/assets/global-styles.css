@@ -176,6 +176,13 @@ a:hover {
   padding: 1rem;
 }
 
+.sidebar.collapsed .sidebar-version {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar-logout {
   padding: 0.5rem 1rem 1rem;
 }
