@@ -23,6 +23,8 @@ h1,
 h2 {
   margin: 0;
 }
+h3 {
+color: black;}
 
 p {
   font-size: 14px;
@@ -86,9 +88,10 @@ a {
   position: relative;
   width: 950px;
   max-width: 100%;
-  min-height: 450px;
+  min-height: 400px;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 .form-container {
@@ -162,7 +165,7 @@ a {
   width: 300px;
   margin-top: -28%;
   position: absolute;
-  top: 60px;
+  top: 100px;
   left: 40px;
   z-index: 100;
 }

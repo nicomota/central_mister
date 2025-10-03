@@ -1,26 +1,24 @@
 <div class="body-login">
   <section class="main">
-    <!-- <img src="./../../content/images/astronauta.png" class="fredLogin" /> -->
+    <img src="/assets/img/astronauta.png" class="fredLogin" />
     <div class="container" id="container">
       <div class="form sign-in-container">
         <form role="form" (ngSubmit)="login()" [formGroup]="loginForm">
           <div class="error-box" *ngIf="authenticationError" data-cy="loginError">
             <strong>{{ message }}</strong>
           </div>
-          <h3>Acesso ao sistema</h3>
+          <h3>Acesso ao Mister Academy</h3>
           <div class="text-left">
-            <span>Usuário:</span>
-            <input type="email" id="username" placeholder="E-mail" formControlName="username" #username data-cy="username" />
+            <span style="position: relative; display: flex; ">Usuário:</span>
+            <input type="email" id="username" placeholder="E-mail" formControlName="username" #username
+              data-cy="username" />
           </div>
+
+
           <div style="position: relative">
-            <input
-              [type]="showPassword ? 'text' : 'password'"
-              id="password"
-              placeholder="Senha"
-              formControlName="password"
-              #password
-              data-cy="password"
-            />
+            <span style="position: relative; display: flex; ">Senha:</span>
+            <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder="Senha"
+              formControlName="password" #password data-cy="password" />
             <fa-icon [icon]="showPassword ? faEyeSlash : faEye" (click)="togglePassword()" class="eye-icon"></fa-icon>
           </div>
           <div class="remember-me">
@@ -34,9 +32,8 @@
           <button type="submit" jhiTranslate="login.form.button" data-cy="submit">Login</button>
 
           <div>
-            <a routerLink="/account/reset/request" jhiTranslate="login.password.forgot" data-cy="forgetYourPasswordSelector"
-              >Did you forget your password?</a
-            >
+            <a routerLink="/account/reset/request" jhiTranslate="login.password.forgot"
+              data-cy="forgetYourPasswordSelector">Did you forget your password?</a>
           </div>
         </form>
       </div>
@@ -44,8 +41,8 @@
         <div class="overlay">
           <div class="overlay-panel overlay-right">
             <img src="./../../content/images/mister-icone.png" alt="" class="mordor" />
-            <h4>Olá, bem vindo ao Mister!</h4>
-            <p>Explore o futuro da Contabilidade: Deixe seu sucesso alcançar novas galáxias! 🚀</p>
+            <h4>Olá, bem vindo a Central de Ajuda!</h4>
+            <p>Aqui você entrará toda a ajuda necessária para a utiliação do Mister Contador</p>
             <p>{{ version }}</p>
           </div>
         </div>

@@ -1,58 +1,43 @@
-.journey-hero {
+.academy-hero {
   background-image: linear-gradient(to left top, #00015c, #0024ac, #0035da, #003aea, #0035da, #0024ac, #00015c);
   color: white;
-  padding: 2rem 2rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  // margin-bottom: 3rem;
   margin-left: 250px;
   position: relative;
-  overflow: hidden;
 }
 
-.journey-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.3;
+.academy-hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
+.academy-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.breadcrumb {
+.academy-hero .breadcrumb {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.9rem;
   opacity: 0.9;
 }
 
-.breadcrumb a {
+.academy-hero .breadcrumb a {
   color: white;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
 
-.breadcrumb a:hover {
+.academy-hero .breadcrumb a:hover {
   opacity: 0.8;
-}
-
-.journey-hero h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.journey-hero p {
-  font-size: 1rem;
-  opacity: 0.9;
-  max-width: 600px;
 }
 
 .overall-progress {
@@ -407,7 +392,6 @@
 
 .cert-content p {
   opacity: 0.9;
-  margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
@@ -466,12 +450,12 @@
 }
 
 @media (max-width: 768px) {
-  .journey-hero {
+  .academy-hero {
     margin-left: 0;
     padding: 1.5rem 1rem;
   }
 
-  .journey-hero h1 {
+  .academy-hero h1 {
     font-size: 1.75rem;
   }
 
