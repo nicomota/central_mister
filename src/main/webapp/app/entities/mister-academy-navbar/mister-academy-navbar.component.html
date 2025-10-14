@@ -19,15 +19,15 @@
         </a>
       </li>
       <li>
-        <a routerLink="/home" routerLinkActive="active">
-          <i class="fas fa-chart-line"></i>
-          <span>Central de Ajuda</span>
-        </a>
-      </li>
-      <li>
         <a routerLink="/mister-academy/journey" routerLinkActive="active">
           <i class="fas fa-route"></i>
           <span>Jornada do Contador</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/home" routerLinkActive="active">
+          <i class="fas fa-chart-line"></i>
+          <span>Central de Ajuda</span>
         </a>
       </li>
     </ul>
@@ -62,7 +62,8 @@
   <div class="mobile-menu" [class.active]="isMobileMenuOpen">
     <ul>
       <li>
-        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">
+        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          (click)="toggleMobileMenu()">
           <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
