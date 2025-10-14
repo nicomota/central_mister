@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'academy-intro',
+    loadChildren: () => import('./entities/mister-academy-landing/mister-academy-landing.module').then(m => m.MisterAcademyLandingModule)
+  },
+  {
     path: 'mister-academy',
     loadChildren: () => import('./entities/mister-academy/mister-academy.module').then(m => m.MisterAcademyModule)
   },
