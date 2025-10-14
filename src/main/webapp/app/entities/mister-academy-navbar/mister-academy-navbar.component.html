@@ -1,0 +1,107 @@
+<nav class="academy-navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <i class="fas fa-rocket"></i>
+      <span class="brand-text">Mister Academy</span>
+    </div>
+
+    <ul class="navbar-menu">
+      <li>
+        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/mister-academy" routerLinkActive="active">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Meus Cursos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/meu-aprendizado" routerLinkActive="active">
+          <i class="fas fa-chart-line"></i>
+          <span>Meu Aprendizado</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/mister-academy/journey" routerLinkActive="active">
+          <i class="fas fa-route"></i>
+          <span>Jornada do Contador</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar-actions">
+      <div *ngIf="!isAuthenticated" class="login-container">
+        <button class="btn-login" (click)="login()">
+          <i class="fas fa-sign-in-alt"></i>
+          <span>Login</span>
+        </button>
+      </div>
+
+      <div *ngIf="isAuthenticated" class="user-container">
+        <div class="user-info">
+          <i class="fas fa-user-circle"></i>
+          <span class="username">Olá, <strong>{{ username }}</strong></span>
+        </div>
+        <button class="btn-logout" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sair</span>
+        </button>
+      </div>
+    </div>
+
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <ul>
+      <li>
+        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/mister-academy" routerLinkActive="active" (click)="toggleMobileMenu()">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Meus Cursos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/meu-aprendizado" routerLinkActive="active" (click)="toggleMobileMenu()">
+          <i class="fas fa-chart-line"></i>
+          <span>Meu Aprendizado</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/mister-academy/journey" routerLinkActive="active" (click)="toggleMobileMenu()">
+          <i class="fas fa-route"></i>
+          <span>Jornada do Contador</span>
+        </a>
+      </li>
+      <li *ngIf="!isAuthenticated">
+        <button class="btn-login mobile" (click)="login(); toggleMobileMenu()">
+          <i class="fas fa-sign-in-alt"></i>
+          <span>Login</span>
+        </button>
+      </li>
+      <li *ngIf="isAuthenticated" class="user-mobile-info">
+        <div class="user-info-mobile">
+          <i class="fas fa-user-circle"></i>
+          <span>Olá, <strong>{{ username }}</strong></span>
+        </div>
+      </li>
+      <li *ngIf="isAuthenticated">
+        <button class="btn-logout mobile" (click)="logout(); toggleMobileMenu()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sair</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

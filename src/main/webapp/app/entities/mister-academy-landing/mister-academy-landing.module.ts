@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MisterAcademyLandingRoutingModule } from './mister-academy-landing-routing.module';
 import { MisterAcademyLandingComponent } from './mister-academy-landing.component';
+import { MisterAcademyNavbarModule } from '../mister-academy-navbar/mister-academy-navbar.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MisterAcademyLandingComponent } from './mister-academy-landing.componen
   ],
   imports: [
     CommonModule,
-    MisterAcademyLandingRoutingModule
+    MisterAcademyLandingRoutingModule,
+    MisterAcademyNavbarModule
   ]
 })
 export class MisterAcademyLandingModule { }

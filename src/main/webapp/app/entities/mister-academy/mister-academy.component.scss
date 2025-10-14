@@ -2,7 +2,6 @@
 .academy-hero {
   position: relative;
   min-height: 35vh;
-  margin-left: 250px;
   margin-bottom: 2rem;
   overflow: hidden;
   display: flex;
@@ -131,12 +130,15 @@
   display: block;
   background: linear-gradient(180deg, #0a0a0f 0%, #000814 50%, #000c18 100%);
   min-height: 100vh;
+  padding-top: 73px; // Espaço para o navbar fixo
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
 
 .content {
   background: transparent;
-  // padding: 1.5rem;
-  margin-left: 250px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .course-grid {

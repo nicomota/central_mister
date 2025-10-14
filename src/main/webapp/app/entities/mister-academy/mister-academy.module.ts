@@ -5,6 +5,7 @@ import { MisterAcademyComponent } from './mister-academy.component';
 import { JourneyComponent } from './journey/journey.component';
 import { AuthGuard } from 'app/core/auth/auth.guard';
 import { CourseComponent } from './course/course.component';
+import { MisterAcademyNavbarModule } from '../mister-academy-navbar/mister-academy-navbar.module';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes), MisterAcademyNavbarModule],
   declarations: [MisterAcademyComponent, JourneyComponent, CourseComponent]
 })
 export class MisterAcademyModule {}
