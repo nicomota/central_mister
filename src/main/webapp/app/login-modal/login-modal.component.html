@@ -1,0 +1,63 @@
+<!-- Login Modal -->
+<div class="login-modal-overlay" *ngIf="isOpen" (click)="close()">
+  <div class="login-modal" (click)="$event.stopPropagation()">
+    <button class="modal-close-btn" (click)="close()">
+      ✕
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-logo">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Bem-vindo ao Mister Academy</h2>
+    </div>
+    <div class="text-center">
+      <p>Entre com suas credenciais para continuar</p>
+    </div>
+
+    <form class="login-form" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">
+          <i class="fas fa-user"></i>
+          Usuário
+        </label>
+        <input type="text" id="username" name="username" [(ngModel)]="loginUsername" placeholder="Digite seu usuário"
+          required autocomplete="username" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          <i class="fas fa-lock"></i>
+          Senha
+        </label>
+        <input type="password" id="password" name="password" [(ngModel)]="loginPassword" placeholder="Digite sua senha"
+          required autocomplete="current-password" />
+      </div>
+
+      <div class="form-group-checkbox">
+        <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe" />
+        <label for="rememberMe">Lembrar de mim</label>
+      </div>
+
+      <div class="error-message" *ngIf="authenticationError">
+        <i class="fas fa-exclamation-circle"></i>
+        Usuário ou senha incorretos. Tente novamente.
+      </div>
+
+      <button type="submit" class="login-submit-btn" [disabled]="isLoggingIn">
+        <span *ngIf="!isLoggingIn">
+          <i class="fas fa-sign-in-alt"></i>
+          Entrar
+        </span>
+        <span *ngIf="isLoggingIn">
+          <i class="fas fa-spinner fa-spin"></i>
+          Entrando...
+        </span>
+      </button>
+    </form>
+
+    <div class="modal-footer">
+      <p>Não tem uma conta? <a href="#">Solicite acesso</a></p>
+    </div>
+  </div>
+</div>

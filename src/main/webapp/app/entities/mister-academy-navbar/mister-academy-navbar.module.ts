@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { MisterAcademyNavbarComponent } from './mister-academy-navbar.component';
+import { LoginModalModule } from 'app/login-modal/login-modal.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { MisterAcademyNavbarComponent } from './mister-academy-navbar.component'
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    LoginModalModule
   ],
   exports: [
     MisterAcademyNavbarComponent

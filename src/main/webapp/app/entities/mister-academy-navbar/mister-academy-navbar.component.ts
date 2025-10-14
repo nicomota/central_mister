@@ -1,11 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'app/core/auth/account.service';
-import { LoginService } from 'app/login/login.service';
-import { Login } from 'app/login/login.model';
 import { AuthServerProvider } from 'app/core/auth/auth-jwt.service';
-import { LoginModalService } from './login-modal.service';
-import { StateStorageService } from 'app/core/auth/state-storage.service';
+import { LoginModalService } from 'app/login-modal/login-modal.service';
 import { Subscription } from 'rxjs';
 
 /**
@@ -44,22 +41,14 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
   username = '';
   isLoginModalOpen = false;
 
-  // Login form fields
-  loginUsername = '';
-  loginPassword = '';
-  rememberMe = false;
-  authenticationError = false;
-  isLoggingIn = false;
-
   private modalSubscription?: Subscription;
+  private loginSuccessSubscription?: Subscription;
 
   constructor(
     private router: Router,
     private accountService: AccountService,
-    private loginService: LoginService,
     private authServerProvider: AuthServerProvider,
-    private loginModalService: LoginModalService,
-    private stateStorageService: StateStorageService
+    private loginModalService: LoginModalService
   ) {}
 
   ngOnInit(): void {
@@ -73,12 +62,27 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
       console.log('Navbar recebeu sinal para abrir modal');
       this.openLoginModal();
     });
+
+    // Escuta evento de login bem-sucedido
+    this.loginSuccessSubscription = new Subscription();
+    window.addEventListener('login-success', this.updateAuthStatus.bind(this));
   }
 
   ngOnDestroy(): void {
     if (this.modalSubscription) {
       this.modalSubscription.unsubscribe();
     }
+    if (this.loginSuccessSubscription) {
+      this.loginSuccessSubscription.unsubscribe();
+    }
+    window.removeEventListener('login-success', this.updateAuthStatus.bind(this));
+  }
+
+  updateAuthStatus(): void {
+    this.accountService.identity().subscribe(account => {
+      this.isAuthenticated = account !== null;
+      this.username = account?.login ?? '';
+    });
   }
 
   toggleMobileMenu(): void {
@@ -88,56 +92,11 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
   openLoginModal(): void {
     console.log('openLoginModal() chamado');
     this.isLoginModalOpen = true;
-    this.authenticationError = false;
-    this.loginUsername = '';
-    this.loginPassword = '';
-    this.rememberMe = false;
     console.log('Modal aberto, isLoginModalOpen:', this.isLoginModalOpen);
   }
 
   closeLoginModal(): void {
     this.isLoginModalOpen = false;
-    this.authenticationError = false;
-    this.loginUsername = '';
-    this.loginPassword = '';
-    this.isLoggingIn = false;
-  }
-
-  login(): void {
-    this.isLoggingIn = true;
-    this.authenticationError = false;
-
-    this.loginService
-      .login(new Login(this.loginUsername, this.loginPassword, this.rememberMe))
-      .subscribe({
-        next: () => {
-          this.authenticationError = false;
-          this.closeLoginModal();
-
-          // Update authentication status
-          this.accountService.identity().subscribe(account => {
-            this.isAuthenticated = account !== null;
-            this.username = account?.login ?? '';
-          });
-
-          // Redireciona para a página que o usuário estava tentando acessar
-          const previousUrl = this.stateStorageService.getUrl();
-
-          if (previousUrl && previousUrl.includes('/mister-academy')) {
-            // Limpa a URL salva
-            this.stateStorageService.clearUrl();
-            // Redireciona para a página original
-            this.router.navigateByUrl(previousUrl);
-          } else if (this.router.url === '/academy-intro') {
-            // Se não há URL salva e está na landing, vai para cursos
-            this.router.navigate(['/mister-academy']);
-          }
-        },
-        error: () => {
-          this.authenticationError = true;
-          this.isLoggingIn = false;
-        }
-      });
   }
 
   logout(): void {

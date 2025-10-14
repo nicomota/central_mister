@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { StateStorageService } from 'app/core/auth/state-storage.service';
-import { LoginModalService } from '../mister-academy-navbar/login-modal.service';
-import { AccountService } from 'app/core/auth/account.service';
+import { LoginModalService } from 'app/login-modal/login-modal.service';
 
 @Component({
   selector: 'app-mister-academy-landing',
@@ -14,9 +12,7 @@ export class MisterAcademyLandingComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private stateStorageService: StateStorageService,
-    private loginModalService: LoginModalService,
-    private accountService: AccountService
+    private loginModalService: LoginModalService
   ) {}
 
   ngOnInit(): void {
