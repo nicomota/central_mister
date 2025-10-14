@@ -1,18 +1,24 @@
 <jhi-sidebar></jhi-sidebar>
 
 <div class="academy-hero">
-  <div class="user-info">
-    <div class="user-welcome">
-      <i class='bx bx-user-circle'></i>
-      <span>Olá, <strong>{{ username }}</strong></span>
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="assets/img/astronauta_veo.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="user-info">
+      <div class="user-welcome">
+        <i class='bx bx-user-circle'></i>
+        <span>Olá, <strong>{{ username }}</strong></span>
+      </div>
+      <button class="logout-btn" (click)="logout()">
+        <i class='bx bx-log-out'></i>
+        Sair
+      </button>
     </div>
-    <button class="logout-btn" (click)="logout()">
-      <i class='bx bx-log-out'></i>
-      Sair
-    </button>
+    <h1 class="hero-title">Mister Academy</h1>
+    <p class="hero-description">Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
   </div>
-  <h1>Mister Academy</h1>
-  <p>Aprenda a dominar o Mister Contador com nossos minicursos práticos. Complete os cursos e receba certificados de conclusão.</p>
 </div>
 
 <div class="content">
