@@ -2,6 +2,10 @@
   "name": "central-de-ajuda",
   "version": "1.0.0",
   "description": "Central de Ajuda - Mister Contador",
+  "engines": {
+    "node": "16.4.2",
+    "npm": ">=7.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
