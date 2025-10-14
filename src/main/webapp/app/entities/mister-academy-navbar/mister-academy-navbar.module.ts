@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { MisterAcademyNavbarComponent } from './mister-academy-navbar.component';
 
 @NgModule({
@@ -9,7 +10,8 @@ import { MisterAcademyNavbarComponent } from './mister-academy-navbar.component'
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     MisterAcademyNavbarComponent

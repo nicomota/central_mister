@@ -22,13 +22,26 @@ export class AuthGuard implements CanActivate {
         console.log('Not authenticated, redirecting to login');
         // Salva a URL que o usuário estava tentando acessar
         this.stateStorageService.storeUrl(state.url);
-        this.router.navigate(['/login']);
+
+        // Se está tentando acessar Mister Academy, redireciona para a landing page
+        // onde o modal de login está disponível
+        if (state.url.includes('/mister-academy')) {
+          this.router.navigate(['/academy-intro'], { queryParams: { openLogin: 'true' } });
+        } else {
+          this.router.navigate(['/login']);
+        }
         return false;
       }),
       catchError(() => {
         console.log('Error checking authentication, redirecting to login');
         this.stateStorageService.storeUrl(state.url);
-        this.router.navigate(['/login']);
+
+        // Se está tentando acessar Mister Academy, redireciona para a landing page
+        if (state.url.includes('/mister-academy')) {
+          this.router.navigate(['/academy-intro'], { queryParams: { openLogin: 'true' } });
+        } else {
+          this.router.navigate(['/login']);
+        }
         return of(false);
       })
     );

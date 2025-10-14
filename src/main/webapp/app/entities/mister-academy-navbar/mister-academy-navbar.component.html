@@ -18,12 +18,12 @@
           <span>Meu Aprendizado</span>
         </a>
       </li>
-      <!-- <li>
-        <a routerLink="/meu-aprendizado" routerLinkActive="active">
+      <li>
+        <a routerLink="/home" routerLinkActive="active">
           <i class="fas fa-chart-line"></i>
-          <span>Meu Aprendizado</span>
+          <span>Central de Ajuda</span>
         </a>
-      </li> -->
+      </li>
       <li>
         <a routerLink="/mister-academy/journey" routerLinkActive="active">
           <i class="fas fa-route"></i>
@@ -34,7 +34,8 @@
 
     <div class="navbar-actions">
       <div *ngIf="!isAuthenticated" class="login-container">
-        <button class="btn-login" (click)="login()">
+        <!-- Para usar página de login antiga ao invés do modal, altere openLoginModal() para navigateToLogin() -->
+        <button class="btn-login" (click)="openLoginModal()">
           <i class="fas fa-sign-in-alt"></i>
           <span>Login</span>
         </button>
@@ -85,7 +86,8 @@
         </a>
       </li>
       <li *ngIf="!isAuthenticated">
-        <button class="btn-login mobile" (click)="login(); toggleMobileMenu()">
+        <!-- Para usar página de login antiga ao invés do modal, altere openLoginModal() para navigateToLogin() -->
+        <button class="btn-login mobile" (click)="openLoginModal(); toggleMobileMenu()">
           <i class="fas fa-sign-in-alt"></i>
           <span>Login</span>
         </button>
@@ -105,3 +107,85 @@
     </ul>
   </div>
 </nav>
+
+<!-- Login Modal -->
+<!-- DOCUMENTAÇÃO: Para remover o modal e usar apenas a página de login antiga, delete todo este bloco (até </div> final do modal) -->
+<div class="login-modal-overlay" *ngIf="isLoginModalOpen" (click)="closeLoginModal()">
+  <div class="login-modal" (click)="$event.stopPropagation()">
+    <button class="modal-close-btn" (click)="closeLoginModal()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="modal-header">
+      <div class="modal-logo">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2>Bem-vindo ao Mister Academy</h2>
+      <p>Entre com suas credenciais para continuar</p>
+    </div>
+
+    <form class="login-form" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">
+          <i class="fas fa-user"></i>
+          Usuário
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="loginUsername"
+          placeholder="Digite seu usuário"
+          required
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          <i class="fas fa-lock"></i>
+          Senha
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="loginPassword"
+          placeholder="Digite sua senha"
+          required
+          autocomplete="current-password"
+        />
+      </div>
+
+      <div class="form-group-checkbox">
+        <input
+          type="checkbox"
+          id="rememberMe"
+          name="rememberMe"
+          [(ngModel)]="rememberMe"
+        />
+        <label for="rememberMe">Lembrar de mim</label>
+      </div>
+
+      <div class="error-message" *ngIf="authenticationError">
+        <i class="fas fa-exclamation-circle"></i>
+        Usuário ou senha incorretos. Tente novamente.
+      </div>
+
+      <button type="submit" class="login-submit-btn" [disabled]="isLoggingIn">
+        <span *ngIf="!isLoggingIn">
+          <i class="fas fa-sign-in-alt"></i>
+          Entrar
+        </span>
+        <span *ngIf="isLoggingIn">
+          <i class="fas fa-spinner fa-spin"></i>
+          Entrando...
+        </span>
+      </button>
+    </form>
+
+    <div class="modal-footer">
+      <p>Não tem uma conta? <a href="#">Solicite acesso</a></p>
+    </div>
+  </div>
+</div>
