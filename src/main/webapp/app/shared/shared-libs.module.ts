@@ -6,7 +6,7 @@ import { NgbModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgChartsModule } from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FontAwesomeModule,
     ReactiveFormsModule,
     TranslateModule,
-    NgChartsModule,
+    ChartsModule,
     NgxSpinnerModule,
   ],
 })

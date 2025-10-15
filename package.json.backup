@@ -1,0 +1,62 @@
+{
+  "name": "central-de-ajuda",
+  "version": "1.0.0",
+  "description": "Central de Ajuda - Mister Contador",
+  "engines": {
+    "node": "16.4.2",
+    "npm": ">=7.0.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.2.0",
+    "@angular/common": "^15.2.0",
+    "@angular/compiler": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/forms": "^15.2.0",
+    "@angular/platform-browser": "^15.2.0",
+    "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/router": "^15.2.0",
+    "@fortawesome/angular-fontawesome": "^0.12.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^12.0.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.0",
+    "boxicons": "^2.1.4",
+    "chart.js": "^4.5.0",
+    "ng2-charts": "^4.1.0",
+    "ngx-infinite-scroll": "^15.0.0",
+    "ngx-spinner": "^15.0.0",
+    "ngx-webstorage": "^11.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^15.0.0",
+    "@angular-devkit/build-angular": "^15.2.0",
+    "@angular/cli": "^15.2.0",
+    "@angular/compiler-cli": "^15.2.0",
+    "@types/node": "^18.19.129",
+    "browser-sync-webpack-plugin": "^2.4.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "eslint-webpack-plugin": "^5.0.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "merge-jsons-webpack-plugin": "^2.0.1",
+    "simple-progress-webpack-plugin": "^2.0.0",
+    "typescript": "~4.9.0",
+    "webpack": "^5.102.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-merge": "^6.0.1",
+    "webpack-notifier": "^1.15.0"
+  }
+}
