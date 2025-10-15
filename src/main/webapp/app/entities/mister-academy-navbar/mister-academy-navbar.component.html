@@ -7,25 +7,25 @@
 
     <ul class="navbar-menu">
       <li>
-        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">
           <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop()">
           <i class="fas fa-graduation-cap"></i>
           <span>Minicursos</span>
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy/journey" routerLinkActive="active">
+        <a routerLink="/mister-academy/journey" routerLinkActive="active" (click)="scrollToTop()">
           <i class="fas fa-route"></i>
           <span>Jornada do Contador</span>
         </a>
       </li>
       <li>
-        <a routerLink="/home" routerLinkActive="active">
+        <a routerLink="/home" routerLinkActive="active" (click)="scrollToTop()">
           <i class="fas fa-chart-line"></i>
           <span>Central de Ajuda</span>
         </a>
@@ -63,25 +63,25 @@
     <ul>
       <li>
         <a routerLink="/academy-intro" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-          (click)="toggleMobileMenu()">
+          (click)="scrollToTop(); toggleMobileMenu()">
           <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">
+        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="scrollToTop(); toggleMobileMenu()">
           <i class="fas fa-graduation-cap"></i>
           <span>Meus Cursos</span>
         </a>
       </li>
       <li>
-        <a routerLink="/meu-aprendizado" routerLinkActive="active" (click)="toggleMobileMenu()">
+        <a routerLink="/meu-aprendizado" routerLinkActive="active" (click)="scrollToTop(); toggleMobileMenu()">
           <i class="fas fa-chart-line"></i>
           <span>Meu Aprendizado</span>
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy/journey" routerLinkActive="active" (click)="toggleMobileMenu()">
+        <a routerLink="/mister-academy/journey" routerLinkActive="active" (click)="scrollToTop(); toggleMobileMenu()">
           <i class="fas fa-route"></i>
           <span>Jornada do Contador</span>
         </a>

@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AccountService } from 'app/core/auth/account.service';
 import { AuthServerProvider } from 'app/core/auth/auth-jwt.service';
 import { LoginModalService } from 'app/login-modal/login-modal.service';
 import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 /**
  * Navbar do Mister Academy
@@ -43,6 +44,7 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
 
   private modalSubscription?: Subscription;
   private loginSuccessSubscription?: Subscription;
+  private routerSubscription?: Subscription;
 
   constructor(
     private router: Router,
@@ -66,6 +68,13 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
     // Escuta evento de login bem-sucedido
     this.loginSuccessSubscription = new Subscription();
     window.addEventListener('login-success', this.updateAuthStatus.bind(this));
+
+    // Scroll para o topo em cada navegação
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
   }
 
   ngOnDestroy(): void {
@@ -74,6 +83,9 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
     }
     if (this.loginSuccessSubscription) {
       this.loginSuccessSubscription.unsubscribe();
+    }
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
     }
     window.removeEventListener('login-success', this.updateAuthStatus.bind(this));
   }
@@ -87,6 +99,10 @@ export class MisterAcademyNavbarComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   openLoginModal(): void {
