@@ -1,21 +1,39 @@
-<jhi-sidebar></jhi-sidebar>
+<app-mister-academy-navbar></app-mister-academy-navbar>
 
-<div class="course-page" *ngIf="course">
-  <div class="course-header">
-    <button class="back-btn" (click)="goBack()">
-      <i class='bx bx-arrow-back'></i>
-      Voltar
-    </button>
-    <div class="course-info">
-      <h1>{{ course.title }}</h1>
-      <div class="course-meta">
-        <span class="duration"><i class='bx bx-time'></i> {{ course.duration }}</span>
-        <span class="level">{{ course.level }}</span>
+<div class="academy-hero" *ngIf="course">
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="assets/img/terra.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay hero-image-fallback"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">{{ course.title }}</h1>
+    <p class="hero-description">Complete seu Minicurso e torne-se um especialista no Mister Contador</p>
+  </div>
+</div>
+
+<div class="content" *ngIf="course">
+  <button class="back-btn" (click)="goBack()">
+    <i class='bx bx-arrow-back'></i>
+    Voltar para Cursos
+  </button>
+
+  <!-- Progresso do Curso -->
+  <div class="course-progress-section">
+    <div class="progress-header">
+      <h3>Seu Progresso</h3>
+      <span class="progress-percentage">{{ getCourseProgress() }}%</span>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="getCourseProgress()"></div>
       </div>
     </div>
+    <p class="progress-info">{{ getCompletedLessonsCount() }} de {{ course.lessons.length }} aulas concluídas</p>
   </div>
 
-  <div class="course-content">
+  <!-- Layout com vídeo e playlist -->
+  <div class="main-content-grid">
     <div class="video-section">
       <div class="video-container">
         <iframe
@@ -27,22 +45,78 @@
       </div>
     </div>
 
-    <div class="description-section">
-      <h2>Sobre este curso</h2>
-      <p>{{ course.description }}</p>
-    </div>
-
-    <div class="actions-section">
-      <button class="primary-btn">
-        <i class='bx bx-check-circle'></i>
-        Marcar como Concluído
-      </button>
-      <button class="secondary-btn" (click)="goBack()">
-        <i class='bx bx-list-ul'></i>
-        Ver Todos os Cursos
-      </button>
+    <!-- Playlist Lateral -->
+    <div class="playlist-section">
+      <div class="playlist-card">
+        <div class="playlist-header">
+          <i class='bx bx-list-ul'></i>
+          <h3>Continue Aprendendo</h3>
+        </div>
+        <div class="playlist-items">
+          <divContinue Aprendendo
+            *ngFor="let lesson of course.lessons; let i = index"
+            class="playlist-item"
+            [class.completed]="lesson.completed"
+            [class.current]="currentLesson?.id === lesson.id"
+            (click)="selectLesson(lesson)">
+            <div class="lesson-number">{{ i + 1 }}</div>
+            <div class="lesson-info">
+              <span class="lesson-title">{{ lesson.title }}</span>
+              <span class="lesson-duration">
+                <i class='bx bx-time'></i>
+                {{ lesson.duration }}
+              </span>
+            </div>
+            <div class="lesson-status">
+              <i class='bx bx-check-circle' *ngIf="lesson.completed"></i>
+              <i class='bx bx-play-circle' *ngIf="currentLesson?.id === lesson.id && !lesson.completed"></i>
+              <i class='bx bx-lock' *ngIf="!lesson.completed && currentLesson?.id !== lesson.id"></i>
+            </div>
+          </divContinue>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="footer"><a href="https://www.linkedin.com/in/nicomota/">© 2025 Nícolas da Mota Monteiro dos Santos</a></div>
+  <!-- O que você vai aprender -->
+  <div class="learning-section">
+    <div class="learning-card">
+      <div class="learning-header">
+        <i class='bx bx-book-open'></i>
+        <h2>O que você vai aprender</h2>
+      </div>
+      <ul class="learning-points">
+        <li *ngFor="let point of course.learningPoints">
+          <i class='bx bx-check-circle'></i>
+          <span>{{ point }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sobre o Curso -->
+  <div class="description-section">
+    <div class="description-card">
+      <div class="description-header">
+        <i class='bx bx-info-circle'></i>
+        <h2>Sobre este curso</h2>
+      </div>
+      <div class="description-content">
+        <p>{{ course.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions-section">
+    <button class="primary-btn">
+      <i class='bx bx-check-circle'></i>
+      Marcar como Concluído
+    </button>
+    <button class="secondary-btn" (click)="goBack()">
+      <i class='bx bx-list-ul'></i>
+      Ver Todos os Cursos
+    </button>
+  </div>
+
+  <div class="footer"><a href="https://www.linkedin.com/in/nicomota/">© 2025 Nícolas da Mota Monteiro dos Santos</a></div>
+</div>
