@@ -30,35 +30,6 @@
   z-index: 0;
 }
 
-.breadcrumb {
-  position: absolute;
-  top: 1.5rem;
-  left: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  z-index: 2;
-}
-
-.breadcrumb a {
-  color: #00d9ff;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.breadcrumb a:hover {
-  opacity: 0.8;
-}
-
-.breadcrumb span {
-  color: #e0e0e0;
-}
-
-.breadcrumb i {
-  color: #808080;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -361,20 +332,29 @@
 }
 
 .step-item.current .step-dot {
-  background: #00d9ff;
+  background: linear-gradient(135deg, #00d9ff 0%, #0066ff 100%);
   border-color: #00d9ff;
   animation: currentPulse 2s infinite;
   box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
 .step-item.current .step-dot::after {
-  content: '▶';
+  content: '🚀';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 8px;
-  color: white;
+  transform: translate(-50%, -50%) rotate(110deg);
+  font-size: 35px;
+  animation: rocketFly 1.5s ease-in-out infinite;
+}
+
+@keyframes rocketFly {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(138deg) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(132deg) translateY(-1px);
+  }
 }
 
 .step-item.locked .step-dot {
@@ -643,11 +623,6 @@
   .academy-hero {
     min-height: 25vh;
     padding: 1rem;
-  }
-
-  .breadcrumb {
-    position: static;
-    margin-bottom: 1rem;
   }
 
   .hero-content {
