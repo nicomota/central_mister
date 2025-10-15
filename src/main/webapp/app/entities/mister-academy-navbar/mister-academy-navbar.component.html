@@ -13,7 +13,7 @@
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy" routerLinkActive="active">
+        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <i class="fas fa-graduation-cap"></i>
           <span>Meu Aprendizado</span>
         </a>
@@ -69,7 +69,7 @@
         </a>
       </li>
       <li>
-        <a routerLink="/mister-academy" routerLinkActive="active" (click)="toggleMobileMenu()">
+        <a routerLink="/mister-academy" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()">
           <i class="fas fa-graduation-cap"></i>
           <span>Meus Cursos</span>
         </a>
