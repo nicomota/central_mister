@@ -236,8 +236,8 @@
 
 .course-content {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto auto;
   flex-grow: 1;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
 }
@@ -257,13 +257,46 @@
 
 .course-description {
   color: #b0b0b0;
-  font-size: 0.8rem;
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-  height: 3.2em;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+// Avaliação em Estrelas
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.stars {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.stars i {
+  color: #ffa500;
+  font-size: 0.9rem;
+  filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.5));
+  transition: all 0.3s ease;
+}
+
+.course-card:hover .stars i {
+  filter: drop-shadow(0 0 6px rgba(255, 165, 0, 0.8));
+}
+
+.rating-value {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: #808080;
 }
 
 .course-meta {
