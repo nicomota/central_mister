@@ -1,9 +1,14 @@
 <app-mister-academy-navbar></app-mister-academy-navbar>
 
 <div class="academy-hero">
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="assets/img/terra.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay hero-image-fallback"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Jornada do Contador</h1>
-    <p>Complete sua trilha de aprendizado e torne-se um especialista no Mister Contador</p>
+    <h1 class="hero-title">Jornada do Contador</h1>
+    <p class="hero-description">Complete sua trilha de aprendizado e torne-se um especialista no Mister Contador</p>
   </div>
 </div>
 
@@ -43,54 +48,87 @@
         <div class="journey-tracker">
           <h3>Progresso da Trilha</h3>
           <div class="video-steps">
-            <div class="step-item completed" data-video="1">
-              <div class="step-dot"></div>
-              <span class="step-label">Navegação</span>
+
+            <!-- Módulo 1: Fundamentos -->
+            <div class="module-wrapper">
+              <div class="module-item completed" (click)="toggleModule(1)">
+                <div class="module-dot"></div>
+                <span class="module-label">Módulo 1: Fundamentos</span>
+                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(1)"></i>
+              </div>
+              <div class="lessons-container" [class.expanded]="isModuleExpanded(1)">
+                <div class="lesson-item completed">
+                  <span class="lesson-label">Aula 1.1: Navegação Básica</span>
+                </div>
+                <div class="lesson-item completed">
+                  <span class="lesson-label">Aula 1.2: Interface do Sistema</span>
+                </div>
+                <div class="lesson-item completed">
+                  <span class="lesson-label">Aula 1.3: Primeiros Passos</span>
+                </div>
+              </div>
             </div>
-            <div class="step-item completed" data-video="2">
-              <div class="step-dot"></div>
-              <span class="step-label">Registro</span>
+
+            <!-- Módulo 2: Configuração -->
+            <div class="module-wrapper">
+              <div class="module-item completed" (click)="toggleModule(2)">
+                <div class="module-dot"></div>
+                <span class="module-label">Módulo 2: Configuração</span>
+                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(2)"></i>
+              </div>
+              <div class="lessons-container" [class.expanded]="isModuleExpanded(2)">
+                <div class="lesson-item completed">
+                  <span class="lesson-label">Aula 2.1: Registro Contábil</span>
+                </div>
+                <div class="lesson-item current">
+                  <span class="lesson-label">Aula 2.2: Nova Empresa</span>
+                </div>
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 2.3: Plano de Contas</span>
+                </div>
+              </div>
             </div>
-            <div class="step-item completed" data-video="3">
-              <div class="step-dot"></div>
-              <span class="step-label">Notas Fiscais</span>
+
+            <!-- Módulo 3: Integrações -->
+            <div class="module-wrapper">
+              <div class="module-item locked" (click)="toggleModule(3)">
+                <div class="module-dot"></div>
+                <span class="module-label">Módulo 3: Integrações</span>
+                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(3)"></i>
+              </div>
+              <div class="lessons-container" [class.expanded]="isModuleExpanded(3)">
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 3.1: APIs e Webhooks</span>
+                </div>
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 3.2: Sincronização</span>
+                </div>
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 3.3: Notas Fiscais</span>
+                </div>
+              </div>
             </div>
-            <div class="step-item completed" data-video="4">
-              <div class="step-dot"></div>
-              <span class="step-label">Configuração</span>
+
+            <!-- Módulo 4: Recursos Avançados -->
+            <div class="module-wrapper">
+              <div class="module-item locked" (click)="toggleModule(4)">
+                <div class="module-dot"></div>
+                <span class="module-label">Módulo 4: Avançado</span>
+                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(4)"></i>
+              </div>
+              <div class="lessons-container" [class.expanded]="isModuleExpanded(4)">
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 4.1: Relatórios</span>
+                </div>
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 4.2: Automação</span>
+                </div>
+                <div class="lesson-item locked">
+                  <span class="lesson-label">Aula 4.3: Otimização</span>
+                </div>
+              </div>
             </div>
-            <div class="step-item current" data-video="5">
-              <div class="step-dot"></div>
-              <span class="step-label">Cadastrar Nova Empresa</span>
-            </div>
-            <div class="step-item locked" data-video="6">
-              <div class="step-dot"></div>
-              <span class="step-label">Plano Contas</span>
-            </div>
-            <div class="step-item locked" data-video="7">
-              <div class="step-dot"></div>
-              <span class="step-label">Relatórios</span>
-            </div>
-            <div class="step-item locked" data-video="8">
-              <div class="step-dot"></div>
-              <span class="step-label">Integrações</span>
-            </div>
-            <div class="step-item locked" data-video="9">
-              <div class="step-dot"></div>
-              <span class="step-label">APIs</span>
-            </div>
-            <div class="step-item locked" data-video="10">
-              <div class="step-dot"></div>
-              <span class="step-label">Sincronização</span>
-            </div>
-            <div class="step-item locked" data-video="11">
-              <div class="step-dot"></div>
-              <span class="step-label">Concilia</span>
-            </div>
-            <div class="step-item locked" data-video="12">
-              <div class="step-dot"></div>
-              <span class="step-label">Avançado</span>
-            </div>
+
           </div>
 
           <div class="navigation-controls">
@@ -103,6 +141,50 @@
               <i class='bx bx-chevron-right'></i>
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introdução da Aula -->
+    <div class="lesson-intro-section">
+      <div class="lesson-intro-card">
+        <div class="intro-header">
+          <i class='bx bx-book-open'></i>
+          <h3>Visão Geral da Aula</h3>
+        </div>
+        <div class="intro-content">
+          <h4>Sobre esta Aula</h4>
+          <p>
+            Nesta aula você aprenderá como criar e configurar uma nova empresa no sistema Mister Contador.
+            Exploraremos os passos essenciais para o cadastro inicial, incluindo dados fiscais, configurações
+            contábeis e integrações básicas necessárias para começar a utilizar o sistema.
+          </p>
+
+          <h4>O que você vai aprender</h4>
+          <ul class="learning-points">
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Cadastro de dados básicos da empresa</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Configuração do plano de contas inicial</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Integração com sistemas fiscais</span>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <span>Configurações de usuários e permissões</span>
+            </li>
+          </ul>
+
+          <h4>Pré-requisitos</h4>
+          <p class="prerequisites">
+            <i class='bx bx-info-circle'></i>
+            É recomendado ter concluído as aulas anteriores sobre navegação básica e entendimento do sistema.
+          </p>
         </div>
       </div>
     </div>
