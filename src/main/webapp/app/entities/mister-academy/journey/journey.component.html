@@ -57,68 +57,193 @@
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(1)">
               <div class="lesson-item current">
-                <span class="lesson-label">Aula 1.1: Apresentação</span>
+                <span class="lesson-label">Aula 1.1: Cadastro de usuários</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 1.2: Cadastro do plano de contas</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 1.3: Cadastro de empresas</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 1.4: Atualização do plano de contas</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 1.5: Cadastro de mais agências bancárias</span>
               </div>
             </div>
           </div>
 
-          <!-- Módulo 2: Configuração -->
+          <!-- Módulo 2: Importação de Documentos Simplificada -->
           <div class="module-wrapper">
             <div class="module-item locked" (click)="toggleModule(2)">
               <div class="module-dot"></div>
-              <span class="module-label">Módulo 2: Configuração</span>
+              <span class="module-label">Módulo 2: Importação de Documentos Simplificada</span>
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(2)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(2)">
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 2.1: Registro Contábil</span>
-              </div>
-              <!-- <div class="lesson-item current"> -->
-              <div class="lesson-item locked">
-                <span class="lesson-label">Aula 2.2: Nova Empresa</span>
+                <span class="lesson-label">Aula 2.1: Tipos de documentos suportados</span>
               </div>
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 2.3: Plano de Contas</span>
+                <span class="lesson-label">Aula 2.2: Ordem correta para conciliação</span>
               </div>
             </div>
           </div>
 
-          <!-- Módulo 3: Integrações -->
+          <!-- Módulo 3: Notas Fiscais -->
           <div class="module-wrapper">
             <div class="module-item locked" (click)="toggleModule(3)">
               <div class="module-dot"></div>
-              <span class="module-label">Módulo 3: Integrações</span>
+              <span class="module-label">Módulo 3: Notas Fiscais</span>
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(3)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(3)">
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 3.1: APIs e Webhooks</span>
+                <span class="lesson-label">Aula 3.1: Integração com sistemas de notas</span>
               </div>
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 3.2: Sincronização</span>
+                <span class="lesson-label">Aula 3.2: Importação e análise de notas de entrada/saída</span>
               </div>
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 3.3: Notas Fiscais</span>
+                <span class="lesson-label">Aula 3.3: Importação de notas de serviço</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 3.4: Mister Notas</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 3.5: Dicas e estatísticas</span>
               </div>
             </div>
           </div>
 
-          <!-- Módulo 4: Recursos Avançados -->
+          <!-- Módulo 4: Comprovantes de Pagamentos -->
           <div class="module-wrapper">
             <div class="module-item locked" (click)="toggleModule(4)">
               <div class="module-dot"></div>
-              <span class="module-label">Módulo 4: Avançado</span>
+              <span class="module-label">Módulo 4: Comprovantes de Pagamentos</span>
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(4)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(4)">
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 4.1: Relatórios</span>
+                <span class="lesson-label">Aula 4.1: Importação de comprovantes em lote</span>
               </div>
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 4.2: Automação</span>
+                <span class="lesson-label">Aula 4.2: Análise e separação automática de documentos</span>
               </div>
               <div class="lesson-item locked">
-                <span class="lesson-label">Aula 4.3: Otimização</span>
+                <span class="lesson-label">Aula 4.3: Detalhamento de tarifas e encargos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 5: Extratos Bancários -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(5)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 5: Extratos Bancários</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(5)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(5)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 5.1: Importação de extratos</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 5.2: Análise de débitos e créditos</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 5.3: Gestão de saldos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 6: Integração Bancária Automática -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(6)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 6: Integração Bancária Automática</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(6)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(6)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 6.1: Configuração de integração bancária</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 6.2: Importação automática de dados</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 6.3: Gestão de acessos secundários</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 7: Registros Contábeis -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(7)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 7: Registros Contábeis</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(7)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(7)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 7.1: Visualização de lançamentos</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 7.2: Associação de contas contábeis</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 7.3: Edição avançada e transferências</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 8: Regras de Conciliação -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(8)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 8: Regras de Conciliação</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(8)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(8)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 8.1: Criação e tipos de regras</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 8.2: Boas práticas para automação</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 9: Exportação de Dados -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(9)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 9: Exportação de Dados</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(9)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(9)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 9.1: Exportação para sistemas contábeis</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 9.2: Formatação conforme plano de contas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 10: Importação de Planilhas -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(10)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 10: Importação de Planilhas</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(10)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(10)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 10.1: Parametrização de planilhas</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 10.2: Importação de dados customizados</span>
               </div>
             </div>
           </div>
@@ -199,15 +324,39 @@
           </div>
           <div class="requirement locked">
             <i class='bx bx-lock'></i>
-            <span>Módulo 2: Em breve</span>
+            <span>Módulo 2: Importação de Documentos Simplificada</span>
           </div>
           <div class="requirement locked">
             <i class='bx bx-lock'></i>
-            <span>Módulo 3: Em breve</span>
+            <span>Módulo 3: Notas Fiscais</span>
           </div>
           <div class="requirement locked">
             <i class='bx bx-lock'></i>
-            <span>Módulo 4: Em breve</span>
+            <span>Módulo 4: Comprovantes de Pagamentos</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 5: Extratos Bancários</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 6: Integração Bancária Automática</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 7: Registros Contábeis</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 8: Regras de Conciliação</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 9: Exportação de Dados</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 10: Importação de Planilhas</span>
           </div>
         </div>
         <button class="cert-btn" disabled>
