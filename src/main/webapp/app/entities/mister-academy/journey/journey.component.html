@@ -13,216 +13,211 @@
 </div>
 
 <div class="content">
-    <!-- Progresso Geral -->
-    <div class="overall-progress">
-      <div class="progress-header">
-        <h2>Seu Progresso na Trilha</h2>
-        <div class="progress-stats">
-          <span class="progress-percentage">45%</span>
-          <span class="progress-courses">5 de 12 cursos concluídos</span>
-        </div>
-      </div>
-      <div class="progress-bar-container">
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 45%"></div>
-        </div>
-      </div>
-      <div class="progress-info">
-        <p><strong>Faltam apenas 7 cursos</strong> para concluir sua jornada e receber o certificado oficial!</p>
+  <!-- Progresso Geral -->
+  <div class="overall-progress">
+    <div class="progress-header">
+      <h2>Seu Progresso na Trilha</h2>
+      <div class="progress-stats">
+        <span class="progress-percentage">0%</span>
+        <span class="progress-courses">0 de 1 aula concluída</span>
       </div>
     </div>
-
-    <!-- Área de Vídeo da Trilha -->
-    <div class="video-section">
-      <div class="video-container">
-        <div class="video-player">
-          <iframe src="https://www.youtube.com/embed/2_aaur_viK8?si=A7qiqF2p8ZdyX2_g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <div class="video-overlay">
-            <div class="video-info">
-              <h3>Aula 5: Criação e Gestão de Regras</h3>
-              <p>Aprenda a criar regras inteligentes para automatizar seus lançamentos contábeis</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="journey-tracker">
-          <h3>Progresso da Trilha</h3>
-          <div class="video-steps">
-
-            <!-- Módulo 1: Fundamentos -->
-            <div class="module-wrapper">
-              <div class="module-item completed" (click)="toggleModule(1)">
-                <div class="module-dot"></div>
-                <span class="module-label">Módulo 1: Fundamentos</span>
-                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(1)"></i>
-              </div>
-              <div class="lessons-container" [class.expanded]="isModuleExpanded(1)">
-                <div class="lesson-item completed">
-                  <span class="lesson-label">Aula 1.1: Navegação Básica</span>
-                </div>
-                <div class="lesson-item completed">
-                  <span class="lesson-label">Aula 1.2: Interface do Sistema</span>
-                </div>
-                <div class="lesson-item completed">
-                  <span class="lesson-label">Aula 1.3: Primeiros Passos</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Módulo 2: Configuração -->
-            <div class="module-wrapper">
-              <div class="module-item completed" (click)="toggleModule(2)">
-                <div class="module-dot"></div>
-                <span class="module-label">Módulo 2: Configuração</span>
-                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(2)"></i>
-              </div>
-              <div class="lessons-container" [class.expanded]="isModuleExpanded(2)">
-                <div class="lesson-item completed">
-                  <span class="lesson-label">Aula 2.1: Registro Contábil</span>
-                </div>
-                <div class="lesson-item current">
-                  <span class="lesson-label">Aula 2.2: Nova Empresa</span>
-                </div>
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 2.3: Plano de Contas</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Módulo 3: Integrações -->
-            <div class="module-wrapper">
-              <div class="module-item locked" (click)="toggleModule(3)">
-                <div class="module-dot"></div>
-                <span class="module-label">Módulo 3: Integrações</span>
-                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(3)"></i>
-              </div>
-              <div class="lessons-container" [class.expanded]="isModuleExpanded(3)">
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 3.1: APIs e Webhooks</span>
-                </div>
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 3.2: Sincronização</span>
-                </div>
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 3.3: Notas Fiscais</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Módulo 4: Recursos Avançados -->
-            <div class="module-wrapper">
-              <div class="module-item locked" (click)="toggleModule(4)">
-                <div class="module-dot"></div>
-                <span class="module-label">Módulo 4: Avançado</span>
-                <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(4)"></i>
-              </div>
-              <div class="lessons-container" [class.expanded]="isModuleExpanded(4)">
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 4.1: Relatórios</span>
-                </div>
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 4.2: Automação</span>
-                </div>
-                <div class="lesson-item locked">
-                  <span class="lesson-label">Aula 4.3: Otimização</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="navigation-controls">
-            <button class="nav-btn prev" id="prevVideo">
-              <i class='bx bx-chevron-left'></i>
-              Anterior
-            </button>
-            <button class="nav-btn next" id="nextVideo">
-              Próximo
-              <i class='bx bx-chevron-right'></i>
-            </button>
-          </div>
-        </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%"></div>
       </div>
     </div>
-
-    <!-- Introdução da Aula -->
-    <div class="lesson-intro-section">
-      <div class="lesson-intro-card">
-        <div class="intro-header">
-          <i class='bx bx-book-open'></i>
-          <h3>Visão Geral da Aula</h3>
-        </div>
-        <div class="intro-content">
-          <h4>Sobre esta Aula</h4>
-          <p>
-            Nesta aula você aprenderá como criar e configurar uma nova empresa no sistema Mister Contador.
-            Exploraremos os passos essenciais para o cadastro inicial, incluindo dados fiscais, configurações
-            contábeis e integrações básicas necessárias para começar a utilizar o sistema.
-          </p>
-
-          <h4>O que você vai aprender</h4>
-          <ul class="learning-points">
-            <li>
-              <i class='bx bx-check-circle'></i>
-              <span>Cadastro de dados básicos da empresa</span>
-            </li>
-            <li>
-              <i class='bx bx-check-circle'></i>
-              <span>Configuração do plano de contas inicial</span>
-            </li>
-            <li>
-              <i class='bx bx-check-circle'></i>
-              <span>Integração com sistemas fiscais</span>
-            </li>
-            <li>
-              <i class='bx bx-check-circle'></i>
-              <span>Configurações de usuários e permissões</span>
-            </li>
-          </ul>
-
-          <h4>Pré-requisitos</h4>
-          <p class="prerequisites">
-            <i class='bx bx-info-circle'></i>
-            É recomendado ter concluído as aulas anteriores sobre navegação básica e entendimento do sistema.
-          </p>
-        </div>
-      </div>
+    <div class="progress-info">
+      <p><strong>Comece sua jornada</strong> assistindo a primeira aula do módulo Cadastros Inteligentes!</p>
     </div>
+  </div>
 
-    <!-- Certificação -->
-    <div class="certification-section">
-      <div class="certification-card">
-        <div class="cert-icon">
-          <i class='bx bx-award'></i>
-        </div>
-        <div class="cert-content">
-          <h3>Certificação de Usabilidade Mister Contador</h3>
-          <p>Complete todos os 12 cursos da trilha para receber sua certificação oficial reconhecida pela empresa.</p>
-          <div class="cert-requirements">
-            <div class="requirement completed">
-              <i class='bx bx-check'></i>
-              <span>Módulo 1: Fundamentos (3/3 cursos)</span>
+  <!-- Área de Vídeo da Trilha -->
+  <div class="video-section">
+    <div class="video-container">
+      <div class="video-player">
+        <iframe src="https://www.youtube.com/embed/DLaeMsJ3qdg?rel=0&modestbranding=1&fs=1&controls=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowfullscreen
+          loading="lazy"
+          title="Módulo 1 - Aula 1: Apresentação"></iframe>
+      </div>
+
+      <div class="journey-tracker">
+        <h3>Progresso da Trilha</h3>
+        <div class="video-steps">
+
+          <!-- Módulo 1: Cadastros Inteligentes -->
+          <div class="module-wrapper">
+            <div class="module-item current" (click)="toggleModule(1)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 1: Cadastros Inteligentes</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(1)"></i>
             </div>
-            <div class="requirement in-progress">
-              <i class='bx bx-time'></i>
-              <span>Módulo 2: Configuração (2/4 cursos)</span>
-            </div>
-            <div class="requirement locked">
-              <i class='bx bx-lock'></i>
-              <span>Módulo 3: Integrações (0/3 cursos)</span>
-            </div>
-            <div class="requirement locked">
-              <i class='bx bx-lock'></i>
-              <span>Módulo 4: Recursos Avançados (0/2 cursos)</span>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(1)">
+              <div class="lesson-item current">
+                <span class="lesson-label">Aula 1.1: Apresentação</span>
+              </div>
             </div>
           </div>
-          <button class="cert-btn" disabled>
-            <i class='bx bx-lock'></i>
-            Certificação Disponível em 7 Cursos
+
+          <!-- Módulo 2: Configuração -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(2)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 2: Configuração</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(2)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(2)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 2.1: Registro Contábil</span>
+              </div>
+              <!-- <div class="lesson-item current"> -->
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 2.2: Nova Empresa</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 2.3: Plano de Contas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 3: Integrações -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(3)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 3: Integrações</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(3)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(3)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 3.1: APIs e Webhooks</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 3.2: Sincronização</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 3.3: Notas Fiscais</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo 4: Recursos Avançados -->
+          <div class="module-wrapper">
+            <div class="module-item locked" (click)="toggleModule(4)">
+              <div class="module-dot"></div>
+              <span class="module-label">Módulo 4: Avançado</span>
+              <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(4)"></i>
+            </div>
+            <div class="lessons-container" [class.expanded]="isModuleExpanded(4)">
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 4.1: Relatórios</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 4.2: Automação</span>
+              </div>
+              <div class="lesson-item locked">
+                <span class="lesson-label">Aula 4.3: Otimização</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="navigation-controls">
+          <button class="nav-btn prev" id="prevVideo">
+            <i class='bx bx-chevron-left'></i>
+            Anterior
+          </button>
+          <button class="nav-btn next" id="nextVideo">
+            Próximo
+            <i class='bx bx-chevron-right'></i>
           </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="footer"><a href="https://www.linkedin.com/in/nicomota/">© 2025 Nícolas da Mota Monteiro dos Santos</a></div>
+  <!-- Introdução da Aula -->
+  <div class="lesson-intro-section">
+    <div class="lesson-intro-card">
+      <div class="intro-header">
+        <i class='bx bx-book-open'></i>
+        <h3>Visão Geral da Aula</h3>
+      </div>
+      <div class="intro-content">
+        <h4>Sobre esta Aula</h4>
+        <p>
+          Nesta aula de apresentação, você conhecerá o módulo de Cadastros Inteligentes do Mister Contador.
+          Vamos explorar as funcionalidades principais, entender como os cadastros automáticos funcionam e
+          como eles podem otimizar seu processo de escrituração contábil.
+        </p>
+
+        <h4>O que você vai aprender</h4>
+        <ul class="learning-points">
+          <li>
+            <i class='bx bx-check-circle'></i>
+            <span>O que são Cadastros Inteligentes</span>
+          </li>
+          <li>
+            <i class='bx bx-check-circle'></i>
+            <span>Principais funcionalidades do módulo</span>
+          </li>
+          <li>
+            <i class='bx bx-check-circle'></i>
+            <span>Benefícios da automação de cadastros</span>
+          </li>
+          <li>
+            <i class='bx bx-check-circle'></i>
+            <span>Como o sistema facilita a escrituração contábil</span>
+          </li>
+        </ul>
+
+        <h4>Pré-requisitos</h4>
+        <p class="prerequisites">
+          <i class='bx bx-info-circle'></i>
+          Esta é a primeira aula do módulo, não há pré-requisitos necessários. Aproveite para conhecer o sistema!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificação -->
+  <div class="certification-section">
+    <div class="certification-card">
+      <div class="cert-icon">
+        <i class='bx bx-award'></i>
+      </div>
+      <div class="cert-content">
+        <h3>Certificação Mister Academy</h3>
+        <p>Complete todos os módulos da trilha para receber sua certificação oficial reconhecida pela empresa.</p>
+        <div class="cert-requirements">
+          <div class="requirement in-progress">
+            <i class='bx bx-time'></i>
+            <span>Módulo 1: Cadastros Inteligentes (Em andamento)</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 2: Em breve</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 3: Em breve</span>
+          </div>
+          <div class="requirement locked">
+            <i class='bx bx-lock'></i>
+            <span>Módulo 4: Em breve</span>
+          </div>
+        </div>
+        <button class="cert-btn" disabled>
+          <i class='bx bx-lock'></i>
+          Complete o Módulo 1 para Desbloquear
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><a href="https://www.linkedin.com/in/nicomota/">© 2025 Nícolas da Mota Monteiro dos Santos</a>
+  </div>
 </div>
