@@ -6,6 +6,7 @@ import { JourneyComponent } from './journey/journey.component';
 import { AuthGuard } from 'app/core/auth/auth.guard';
 import { CourseComponent } from './course/course.component';
 import { MisterAcademyNavbarModule } from '../mister-academy-navbar/mister-academy-navbar.module';
+import { SafePipe } from 'app/shared/pipes/safe.pipe';
 
 const routes: Routes = [
   {
@@ -27,6 +28,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild(routes), MisterAcademyNavbarModule],
-  declarations: [MisterAcademyComponent, JourneyComponent, CourseComponent]
+  declarations: [MisterAcademyComponent, JourneyComponent, CourseComponent, SafePipe]
 })
 export class MisterAcademyModule {}

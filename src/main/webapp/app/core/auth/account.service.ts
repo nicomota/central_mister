@@ -10,6 +10,7 @@ import { StateStorageService } from 'app/core/auth/state-storage.service';
 import { Account } from 'app/core/auth/account.model';
 import { AUTH_URL } from 'app/app.constants';
 import { TawkService } from 'app/shared/chat/TawkService';
+import { UserProgressService } from 'app/entities/mister-academy/services/user-progress.service';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -23,7 +24,8 @@ export class AccountService {
     private http: HttpClient,
     private stateStorageService: StateStorageService,
     private router: Router,
-    private tawkService: TawkService
+    private tawkService: TawkService,
+    private userProgressService: UserProgressService
   ) {}
 
   save(account: Account): Observable<{}> {
@@ -52,8 +54,8 @@ export class AccountService {
         tap((account: Account | null) => {
           this.authenticate(account);
 
-          // After retrieve the account info, the language will be changed to
-          // the user's preferred language configured in the account setting
+        // Após recuperar as informações da conta, o idioma será alterado para
+        // o idioma preferido do usuário configurado nas configurações da conta
           if (account?.langKey) {
             const langKey = this.sessionStorage.retrieve('locale') ?? account.langKey;
             this.translateService.use(langKey);
@@ -62,6 +64,7 @@ export class AccountService {
           if (account) {
             this.navigateToStoredUrl();
             this.loadChat(account);
+            this.loadUserProgress(account);
           }
         }),
         shareReplay()
@@ -87,8 +90,8 @@ export class AccountService {
   }
 
   private navigateToStoredUrl(): void {
-    // previousState can be set in the authExpiredInterceptor and in the userRouteAccessService
-    // if login is successful, go to stored previousState and clear previousState
+    // previousState pode ser definido no authExpiredInterceptor e no userRouteAccessService
+    // se o login for bem-sucedido, vá para previousState armazenado e limpe previousState
     const previousUrl = this.stateStorageService.getUrl();
     if (previousUrl) {
       this.stateStorageService.clearUrl();
@@ -98,5 +101,25 @@ export class AccountService {
   private loadChat(account: Account): void {
     this.tawkService.updateTawkUser(account);
     this.tawkService.setChatVisibility(true);
+  }
+
+  /**
+   * Carrega o progresso do usuário na Mister Academy
+   * Este método é chamado automaticamente após o login bem-sucedido
+   * Cria um arquivo JSON se for o primeiro login do usuário
+   *
+   * @param account Dados da conta do usuário logado
+   */
+  private loadUserProgress(account: Account): void {
+    if (account.email) {
+      this.userProgressService.loadOrCreateProgress(account.email).subscribe({
+        next: progress => {
+          console.log('Progresso do usuário carregado/criado com sucesso:', progress);
+        },
+        error: error => {
+          console.error('Erro ao carregar progresso do usuário:', error);
+        }
+      });
+    }
   }
 }

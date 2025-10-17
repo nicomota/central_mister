@@ -18,17 +18,19 @@
     <div class="progress-header">
       <h2>Seu Progresso na Trilha</h2>
       <div class="progress-stats">
-        <span class="progress-percentage">0%</span>
-        <span class="progress-courses">0 de 1 aula concluída</span>
+        <span class="progress-percentage">{{ overallProgress }}%</span>
+        <span class="progress-courses">{{ completedCourses }} de {{ totalCourses }} aulas concluídas</span>
       </div>
     </div>
     <div class="progress-bar-container">
       <div class="progress-bar">
-        <div class="progress-fill" style="width: 0%"></div>
+        <div class="progress-fill" [style.width.%]="overallProgress"></div>
       </div>
     </div>
     <div class="progress-info">
-      <p><strong>Comece sua jornada</strong> assistindo a primeira aula do módulo Cadastros Inteligentes!</p>
+      <p *ngIf="overallProgress === 0"><strong>Comece sua jornada</strong> assistindo a primeira aula do módulo Cadastros Inteligentes!</p>
+      <p *ngIf="overallProgress > 0 && overallProgress < 100"><strong>Continue assim!</strong> Você já completou {{ overallProgress }}% da sua jornada.</p>
+      <p *ngIf="overallProgress === 100"><strong>Parabéns!</strong> Você completou toda a jornada do contador!</p>
     </div>
   </div>
 
@@ -36,12 +38,12 @@
   <div class="video-section">
     <div class="video-container">
       <div class="video-player">
-        <iframe src="https://www.youtube.com/embed/DLaeMsJ3qdg?rel=0&modestbranding=1&fs=1&controls=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1"
+        <iframe [src]="currentVideoUrl | safe: 'resourceUrl'"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
           allowfullscreen
           loading="lazy"
-          title="Módulo 1 - Aula 1: Apresentação"></iframe>
+          title="Vídeo da Aula"></iframe>
       </div>
 
       <div class="journey-tracker">
@@ -56,20 +58,25 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(1)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(1)">
-              <div class="lesson-item current">
+              <div class="lesson-item" [class.current]="isCurrentCourse(1, 1)" [class.completed]="isCourseCompleted(1, 1)" (click)="goToCourse(1, 1)">
                 <span class="lesson-label">Aula 1.1: Cadastro de usuários</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(1, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(1, 2)" [class.completed]="isCourseCompleted(1, 2)" (click)="goToCourse(1, 2)">
                 <span class="lesson-label">Aula 1.2: Cadastro do plano de contas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(1, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(1, 3)" [class.completed]="isCourseCompleted(1, 3)" (click)="goToCourse(1, 3)">
                 <span class="lesson-label">Aula 1.3: Cadastro de empresas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(1, 3)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(1, 4)" [class.completed]="isCourseCompleted(1, 4)" (click)="goToCourse(1, 4)">
                 <span class="lesson-label">Aula 1.4: Atualização do plano de contas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(1, 4)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(1, 5)" [class.completed]="isCourseCompleted(1, 5)" (click)="goToCourse(1, 5)">
                 <span class="lesson-label">Aula 1.5: Cadastro de mais agências bancárias</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(1, 5)"></i>
               </div>
             </div>
           </div>
@@ -82,11 +89,13 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(2)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(2)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(2, 1)" [class.completed]="isCourseCompleted(2, 1)" (click)="goToCourse(2, 1)">
                 <span class="lesson-label">Aula 2.1: Tipos de documentos suportados</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(2, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(2, 2)" [class.completed]="isCourseCompleted(2, 2)" (click)="goToCourse(2, 2)">
                 <span class="lesson-label">Aula 2.2: Ordem correta para conciliação</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(2, 2)"></i>
               </div>
             </div>
           </div>
@@ -99,20 +108,25 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(3)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(3)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(3, 1)" [class.completed]="isCourseCompleted(3, 1)" (click)="goToCourse(3, 1)">
                 <span class="lesson-label">Aula 3.1: Integração com sistemas de notas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(3, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(3, 2)" [class.completed]="isCourseCompleted(3, 2)" (click)="goToCourse(3, 2)">
                 <span class="lesson-label">Aula 3.2: Importação e análise de notas de entrada/saída</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(3, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(3, 3)" [class.completed]="isCourseCompleted(3, 3)" (click)="goToCourse(3, 3)">
                 <span class="lesson-label">Aula 3.3: Importação de notas de serviço</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(3, 3)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(3, 4)" [class.completed]="isCourseCompleted(3, 4)" (click)="goToCourse(3, 4)">
                 <span class="lesson-label">Aula 3.4: Mister Notas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(3, 4)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(3, 5)" [class.completed]="isCourseCompleted(3, 5)" (click)="goToCourse(3, 5)">
                 <span class="lesson-label">Aula 3.5: Dicas e estatísticas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(3, 5)"></i>
               </div>
             </div>
           </div>
@@ -125,14 +139,17 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(4)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(4)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(4, 1)" [class.completed]="isCourseCompleted(4, 1)" (click)="goToCourse(4, 1)">
                 <span class="lesson-label">Aula 4.1: Importação de comprovantes em lote</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(4, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(4, 2)" [class.completed]="isCourseCompleted(4, 2)" (click)="goToCourse(4, 2)">
                 <span class="lesson-label">Aula 4.2: Análise e separação automática de documentos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(4, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(4, 3)" [class.completed]="isCourseCompleted(4, 3)" (click)="goToCourse(4, 3)">
                 <span class="lesson-label">Aula 4.3: Detalhamento de tarifas e encargos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(4, 3)"></i>
               </div>
             </div>
           </div>
@@ -145,14 +162,17 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(5)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(5)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(5, 1)" [class.completed]="isCourseCompleted(5, 1)" (click)="goToCourse(5, 1)">
                 <span class="lesson-label">Aula 5.1: Importação de extratos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(5, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(5, 2)" [class.completed]="isCourseCompleted(5, 2)" (click)="goToCourse(5, 2)">
                 <span class="lesson-label">Aula 5.2: Análise de débitos e créditos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(5, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(5, 3)" [class.completed]="isCourseCompleted(5, 3)" (click)="goToCourse(5, 3)">
                 <span class="lesson-label">Aula 5.3: Gestão de saldos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(5, 3)"></i>
               </div>
             </div>
           </div>
@@ -165,14 +185,17 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(6)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(6)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(6, 1)" [class.completed]="isCourseCompleted(6, 1)" (click)="goToCourse(6, 1)">
                 <span class="lesson-label">Aula 6.1: Configuração de integração bancária</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(6, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(6, 2)" [class.completed]="isCourseCompleted(6, 2)" (click)="goToCourse(6, 2)">
                 <span class="lesson-label">Aula 6.2: Importação automática de dados</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(6, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(6, 3)" [class.completed]="isCourseCompleted(6, 3)" (click)="goToCourse(6, 3)">
                 <span class="lesson-label">Aula 6.3: Gestão de acessos secundários</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(6, 3)"></i>
               </div>
             </div>
           </div>
@@ -185,14 +208,17 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(7)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(7)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(7, 1)" [class.completed]="isCourseCompleted(7, 1)" (click)="goToCourse(7, 1)">
                 <span class="lesson-label">Aula 7.1: Visualização de lançamentos</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(7, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(7, 2)" [class.completed]="isCourseCompleted(7, 2)" (click)="goToCourse(7, 2)">
                 <span class="lesson-label">Aula 7.2: Associação de contas contábeis</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(7, 2)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(7, 3)" [class.completed]="isCourseCompleted(7, 3)" (click)="goToCourse(7, 3)">
                 <span class="lesson-label">Aula 7.3: Edição avançada e transferências</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(7, 3)"></i>
               </div>
             </div>
           </div>
@@ -205,11 +231,13 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(8)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(8)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(8, 1)" [class.completed]="isCourseCompleted(8, 1)" (click)="goToCourse(8, 1)">
                 <span class="lesson-label">Aula 8.1: Criação e tipos de regras</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(8, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(8, 2)" [class.completed]="isCourseCompleted(8, 2)" (click)="goToCourse(8, 2)">
                 <span class="lesson-label">Aula 8.2: Boas práticas para automação</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(8, 2)"></i>
               </div>
             </div>
           </div>
@@ -222,11 +250,13 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(9)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(9)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(9, 1)" [class.completed]="isCourseCompleted(9, 1)" (click)="goToCourse(9, 1)">
                 <span class="lesson-label">Aula 9.1: Exportação para sistemas contábeis</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(9, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(9, 2)" [class.completed]="isCourseCompleted(9, 2)" (click)="goToCourse(9, 2)">
                 <span class="lesson-label">Aula 9.2: Formatação conforme plano de contas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(9, 2)"></i>
               </div>
             </div>
           </div>
@@ -239,11 +269,13 @@
               <i class='bx bx-chevron-down module-chevron' [class.expanded]="isModuleExpanded(10)"></i>
             </div>
             <div class="lessons-container" [class.expanded]="isModuleExpanded(10)">
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(10, 1)" [class.completed]="isCourseCompleted(10, 1)" (click)="goToCourse(10, 1)">
                 <span class="lesson-label">Aula 10.1: Parametrização de planilhas</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(10, 1)"></i>
               </div>
-              <div class="lesson-item locked">
+              <div class="lesson-item" [class.current]="isCurrentCourse(10, 2)" [class.completed]="isCourseCompleted(10, 2)" (click)="goToCourse(10, 2)">
                 <span class="lesson-label">Aula 10.2: Importação de dados customizados</span>
+                <i class='bx bx-check-circle' *ngIf="isCourseCompleted(10, 2)"></i>
               </div>
             </div>
           </div>
@@ -251,11 +283,11 @@
         </div>
 
         <div class="navigation-controls">
-          <button class="nav-btn prev" id="prevVideo">
+          <button class="nav-btn prev" (click)="prevVideo()" [disabled]="!canGoPrev()">
             <i class='bx bx-chevron-left'></i>
             Anterior
           </button>
-          <button class="nav-btn next" id="nextVideo">
+          <button class="nav-btn next" (click)="nextVideo()" [disabled]="!canGoNext()">
             Próximo
             <i class='bx bx-chevron-right'></i>
           </button>

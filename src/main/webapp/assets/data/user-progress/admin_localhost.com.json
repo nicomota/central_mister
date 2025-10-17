@@ -1,0 +1,255 @@
+{
+  "login": "admin@localhost.com",
+  "modulos": [
+    {
+      "id": 1,
+      "nome_modulo": "Cadastros Inteligentes",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Cadastro de usuários",
+          "url": "",
+          "completado": true
+        },
+        {
+          "id": 2,
+          "nome": "Cadastro do plano de contas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Cadastro de empresas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 4,
+          "nome": "Atualização do plano de contas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 5,
+          "nome": "Cadastro de mais agências bancárias",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome_modulo": "Importação de Documentos Simplificada",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Tipos de documentos suportados",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Ordem correta para conciliação",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome_modulo": "Notas Fiscais",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Integração com sistemas de notas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Importação e análise de notas de entrada/saída",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Importação de notas de serviço",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 4,
+          "nome": "Mister Notas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 5,
+          "nome": "Dicas e estatísticas",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome_modulo": "Comprovantes de Pagamentos",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Importação de comprovantes em lote",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Análise e separação automática de documentos",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Detalhamento de tarifas e encargos",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome_modulo": "Extratos Bancários",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Importação de extratos",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Análise de débitos e créditos",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Gestão de saldos",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome_modulo": "Integração Bancária Automática",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Configuração de integração bancária",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Importação automática de dados",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Gestão de acessos secundários",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nome_modulo": "Registros Contábeis",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Visualização de lançamentos",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Associação de contas contábeis",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 3,
+          "nome": "Edição avançada e transferências",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nome_modulo": "Regras de Conciliação",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Criação e tipos de regras",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Boas práticas para automação",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nome_modulo": "Exportação de Dados",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Exportação para sistemas contábeis",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Formatação conforme plano de contas",
+          "url": "",
+          "completado": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nome_modulo": "Importação de Planilhas",
+      "completado": false,
+      "cursos": [
+        {
+          "id": 1,
+          "nome": "Parametrização de planilhas",
+          "url": "",
+          "completado": false
+        },
+        {
+          "id": 2,
+          "nome": "Importação de dados customizados",
+          "url": "",
+          "completado": false
+        }
+      ]
+    }
+  ]
+}

@@ -456,6 +456,13 @@
   font-weight: 500;
 }
 
+.lesson-item .bx-check-circle {
+  color: #00ff88;
+  font-size: 1.2rem;
+  margin-left: auto;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.5));
+}
+
 .lesson-item.current .lesson-label {
   color: #00d9ff;
   font-weight: 600;
