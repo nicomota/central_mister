@@ -100,9 +100,9 @@ export class UserProgressService {
         cursos: [
           { id: 1, nome: 'Cadastro de usuários', url: 'https://www.youtube.com/embed/DLaeMsJ3qdg', completado: false },
           { id: 2, nome: 'Cadastro do plano de contas', url: 'https://www.youtube.com/embed/ruoWV0pBm_k', completado: false },
-          { id: 3, nome: 'Cadastro de empresas', url: '', completado: false },
-          { id: 4, nome: 'Atualização do plano de contas', url: '', completado: false },
-          { id: 5, nome: 'Cadastro de mais agências bancárias', url: '', completado: false }
+          { id: 3, nome: 'Cadastro de empresas', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', completado: false },
+          { id: 4, nome: 'Atualização do plano de contas', url: 'https://www.youtube.com/embed/9bZkp7q19f0', completado: false },
+          { id: 5, nome: 'Cadastro de mais agências bancárias', url: 'https://www.youtube.com/embed/kJQP7kiw5Fk', completado: false }
         ]
       },
       {
@@ -110,8 +110,8 @@ export class UserProgressService {
         nome_modulo: 'Importação de Documentos Simplificada',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Tipos de documentos suportados', url: '', completado: false },
-          { id: 2, nome: 'Ordem correta para conciliação', url: '', completado: false }
+          { id: 1, nome: 'Tipos de documentos suportados', url: 'https://www.youtube.com/embed/3JZ_D3ELwOQ', completado: false },
+          { id: 2, nome: 'Ordem correta para conciliação', url: 'https://www.youtube.com/embed/fJ9rUzIMcZQ', completado: false }
         ]
       },
       {
@@ -119,11 +119,11 @@ export class UserProgressService {
         nome_modulo: 'Notas Fiscais',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Integração com sistemas de notas', url: '', completado: false },
-          { id: 2, nome: 'Importação e análise de notas de entrada/saída', url: '', completado: false },
-          { id: 3, nome: 'Importação de notas de serviço', url: '', completado: false },
-          { id: 4, nome: 'Mister Notas', url: '', completado: false },
-          { id: 5, nome: 'Dicas e estatísticas', url: '', completado: false }
+          { id: 1, nome: 'Integração com sistemas de notas', url: 'https://www.youtube.com/embed/ZZ5LpwO-An4', completado: false },
+          { id: 2, nome: 'Importação e análise de notas de entrada/saída', url: 'https://www.youtube.com/embed/hT_nvWreIhg', completado: false },
+          { id: 3, nome: 'Importação de notas de serviço', url: 'https://www.youtube.com/embed/uelHwf8o7_U', completado: false },
+          { id: 4, nome: 'Mister Notas', url: 'https://www.youtube.com/embed/YQHsXMglC9A', completado: false },
+          { id: 5, nome: 'Dicas e estatísticas', url: 'https://www.youtube.com/embed/2vjPBrBU-TM', completado: false }
         ]
       },
       {
@@ -131,9 +131,9 @@ export class UserProgressService {
         nome_modulo: 'Comprovantes de Pagamentos',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Importação de comprovantes em lote', url: '', completado: false },
-          { id: 2, nome: 'Análise e separação automática de documentos', url: '', completado: false },
-          { id: 3, nome: 'Detalhamento de tarifas e encargos', url: '', completado: false }
+          { id: 1, nome: 'Importação de comprovantes em lote', url: 'https://www.youtube.com/embed/Xz5zX8HFdxE', completado: false },
+          { id: 2, nome: 'Análise e separação automática de documentos', url: 'https://www.youtube.com/embed/L_jWHffIx5E', completado: false },
+          { id: 3, nome: 'Detalhamento de tarifas e encargos', url: 'https://www.youtube.com/embed/videoseries', completado: false }
         ]
       },
       {
@@ -141,9 +141,9 @@ export class UserProgressService {
         nome_modulo: 'Extratos Bancários',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Importação de extratos', url: '', completado: false },
-          { id: 2, nome: 'Análise de débitos e créditos', url: '', completado: false },
-          { id: 3, nome: 'Gestão de saldos', url: '', completado: false }
+          { id: 1, nome: 'Importação de extratos', url: 'https://www.youtube.com/embed/CevxZvSJLk8', completado: false },
+          { id: 2, nome: 'Análise de débitos e créditos', url: 'https://www.youtube.com/embed/kXYiU_JCYtU', completado: false },
+          { id: 3, nome: 'Gestão de saldos', url: 'https://www.youtube.com/embed/yPYZpwSpKmA', completado: false }
         ]
       },
       {
@@ -151,9 +151,9 @@ export class UserProgressService {
         nome_modulo: 'Integração Bancária Automática',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Configuração de integração bancária', url: '', completado: false },
-          { id: 2, nome: 'Importação automática de dados', url: '', completado: false },
-          { id: 3, nome: 'Gestão de acessos secundários', url: '', completado: false }
+          { id: 1, nome: 'Configuração de integração bancária', url: 'https://www.youtube.com/embed/Sv6dMFF_yts', completado: false },
+          { id: 2, nome: 'Importação automática de dados', url: 'https://www.youtube.com/embed/8UVNT4wvIGY', completado: false },
+          { id: 3, nome: 'Gestão de acessos secundários', url: 'https://www.youtube.com/embed/djV11Xbc914', completado: false }
         ]
       },
       {
@@ -161,9 +161,9 @@ export class UserProgressService {
         nome_modulo: 'Registros Contábeis',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Visualização de lançamentos', url: '', completado: false },
-          { id: 2, nome: 'Associação de contas contábeis', url: '', completado: false },
-          { id: 3, nome: 'Edição avançada e transferências', url: '', completado: false }
+          { id: 1, nome: 'Visualização de lançamentos', url: 'https://www.youtube.com/embed/RgKAFK5djSk', completado: false },
+          { id: 2, nome: 'Associação de contas contábeis', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', completado: false },
+          { id: 3, nome: 'Edição avançada e transferências', url: 'https://www.youtube.com/embed/M7lc1UVf-VE', completado: false }
         ]
       },
       {
@@ -171,8 +171,8 @@ export class UserProgressService {
         nome_modulo: 'Regras de Conciliação',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Criação e tipos de regras', url: '', completado: false },
-          { id: 2, nome: 'Boas práticas para automação', url: '', completado: false }
+          { id: 1, nome: 'Criação e tipos de regras', url: 'https://www.youtube.com/embed/OPf0YbXqDm0', completado: false },
+          { id: 2, nome: 'Boas práticas para automação', url: 'https://www.youtube.com/embed/moSFlvxnbgk', completado: false }
         ]
       },
       {
@@ -180,8 +180,8 @@ export class UserProgressService {
         nome_modulo: 'Exportação de Dados',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Exportação para sistemas contábeis', url: '', completado: false },
-          { id: 2, nome: 'Formatação conforme plano de contas', url: '', completado: false }
+          { id: 1, nome: 'Exportação para sistemas contábeis', url: 'https://www.youtube.com/embed/y8Kyi0WNg40', completado: false },
+          { id: 2, nome: 'Formatação conforme plano de contas', url: 'https://www.youtube.com/embed/ZbZSe6N_BXs', completado: false }
         ]
       },
       {
@@ -189,8 +189,8 @@ export class UserProgressService {
         nome_modulo: 'Importação de Planilhas',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Parametrização de planilhas', url: '', completado: false },
-          { id: 2, nome: 'Importação de dados customizados', url: '', completado: false }
+          { id: 1, nome: 'Parametrização de planilhas', url: 'https://www.youtube.com/embed/3AtDnEC4zak', completado: false },
+          { id: 2, nome: 'Importação de dados customizados', url: 'https://www.youtube.com/embed/60ItHLz5WEA', completado: false }
         ]
       }
     ];
