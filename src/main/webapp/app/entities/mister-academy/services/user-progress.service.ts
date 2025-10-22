@@ -98,7 +98,7 @@ export class UserProgressService {
         nome_modulo: 'Cadastros Inteligentes',
         completado: false,
         cursos: [
-          { id: 1, nome: 'Cadastro de usuários', url: 'https://www.youtube.com/embed/DLaeMsJ3qdg', completado: false },
+          { id: 1, nome: 'Cadastro de usuários', url: 'https://www.youtube.com/embed/j7P3Q4nhrFA', completado: false },
           { id: 2, nome: 'Cadastro do plano de contas', url: 'https://www.youtube.com/embed/ruoWV0pBm_k', completado: false },
           { id: 3, nome: 'Cadastro de empresas', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', completado: false },
           { id: 4, nome: 'Atualização do plano de contas', url: 'https://www.youtube.com/embed/9bZkp7q19f0', completado: false },
