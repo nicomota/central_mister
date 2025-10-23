@@ -246,15 +246,37 @@
   background: none;
   border: none;
   color: #00d9ff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
   transition: all 0.3s ease;
+  z-index: 100;
 }
 
 .mobile-menu-btn:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.6));
+}
+
+// Força exibição do botão hamburger no mobile
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 44px;
+    min-height: 44px;
+    background: rgba(0, 217, 255, 0.1) !important;
+    border: 1px solid rgba(0, 217, 255, 0.3) !important;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu-btn .hamburger-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
 }
 
 .mobile-menu {
@@ -338,19 +360,35 @@
 
 @media (max-width: 768px) {
   .navbar-menu {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 
   .navbar-actions {
-    display: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .navbar-actions .login-container,
+  .navbar-actions .user-container {
+    display: none !important;
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex !important;
   }
 
   .mobile-menu {
     display: block;
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+
+  .mobile-menu.active {
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .navbar-container {
@@ -364,11 +402,17 @@
 
 @media (max-width: 480px) {
   .brand-text {
-    display: none;
+    font-size: 1rem;
+    display: block !important;
+  }
+
+  .navbar-brand {
+    display: flex !important;
   }
 
   .navbar-brand i {
     font-size: 1.5rem;
+    display: block !important;
   }
 }
 
